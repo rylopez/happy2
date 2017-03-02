@@ -1,0 +1,424 @@
+  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+  @font-face{
+   font-family: "lacite";
+   font-style: normal;
+   font-weight: normal;
+   src: url('../tipografias/Blanche.ttf');
+}
+body {
+  margin: 0;
+  background: #000; 
+}
+.homepage-hero-module {
+  border-right: none;
+  border-left: none;
+  position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+  display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+  display: block !important;
+}
+.video-container {
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  margin-top: -20px !important;
+}
+.video-container .poster img {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.video-container .filter {
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+.video-container .title-container {
+  z-index: 200;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.video-container .description .inner {
+  font-size: 1em;
+  width: 45%;
+  margin: 0 auto;
+}
+.video-container .link {
+  position: absolute;
+  bottom: 3em;
+  width: 100%;
+  text-align: center;
+  z-index: 1001;
+  font-size: 2em;
+  color: #fff;
+}
+.video-container .link a {
+  color: #fff;
+}
+.video-container video {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+}
+.video-container video.fillWidth {
+  width: 100%;
+}
+
+  
+  .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+
+    }
+    
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    
+    }
+  /*  despues de aca*/
+  }
+  #nav-icon {
+  position: relative;
+  margin-top: 7px;
+  width: 45px;
+  height: 5px;
+  z-index: 10;
+  /* Bring icon ontop of overlay */
+  cursor: pointer;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+#nav-icon span {
+  margin-top: 0.5px !important;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon.animate-icon span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon.animate-icon span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon.animate-icon span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+#overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Overlay positioning */
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Want a left- or right sided navigation instead? Just play around with the width! */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index:1000;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#overlay div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+}
+
+#overlay ul  li a { 
+  text-decoration: none; 
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-size:50px !important; 
+  
+  
+}
+#overlay ul li a:hover {  
+  
+  font-size:80px !important; 
+  
+}
+
+/* hasta era original */ 
+  #nav{
+    width: 100%;
+    margin-top:0px !important;
+  }
+  #mimodal{
+    background-color: black;
+  }
+
+ #imgmodal{
+  margin:43px;
+ }
+ #loguear{
+   margin-left:10%;
+   margin-right: 10%
+
+ }
+ input{
+   margin-bottom: 10%;
+   margin-top: 10%;
+ }
+ .reg{
+  margin: 0px
+ }
+.btreg{
+  height: 70px;
+  width: 100%;
+  border-radius: 5px;
+  
+}
+.iconmenu {
+  text-decoration: none !important;
+  color: white;
+  margin-top: -25%;
+  
+}
+#nomusu{
+    margin-right: 0%;
+    margin-top: 5% !important;
+    text-decoration: none;
+    color: white;
+    size: 30px !important;
+  }
+
+
+.datatable{
+  width: 70%;
+  
+  margin-left: 25%;
+
+}
+.gestionar{
+   font: 95% Arial, Helvetica, sans-serif;
+     margin-left: 2%;
+      margin-right: 2%;
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: 0px -16px 16px -16px;
+
+}
+.form-style-6{
+    font: 95% Arial, Helvetica, sans-serif;
+     margin-left: 2%;
+      margin-right: 2%;
+
+    padding: 16px;
+    background: #F7F7F7;
+    width: 95%;
+}
+.form-style-6 h3{
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="password"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="file"],
+.form-style-6 input[type="url"],
+.form-style-6 select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 48%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 2%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 textarea{
+  -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 98%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 2%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="password"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="file"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+}
+
+.form-style-6 input[type="submit"],
+.guardar{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 48%;
+    padding: 3%!important;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.cancelar{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 48%;
+    padding: 2.78% !important;
+    background:#797D8B;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.form-style-6 input[type="submit"]:hover,
+.guardar:hover{
+    background: #2EBC99 !important;
+}
+.cancelar:hover{
+    background: #5C6171 !important;
+}
+.new{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 48%;
+    padding: 3%!important;
+    background:black;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+    margin-bottom: 25px!important;
+}
+.new:hover{
+    background: #080707 !important;
+}
+  
+  
+}
+.formulario{
+   background: #F7F7F7;
+}
+.contenedor {
+  width: 98%;
+  background:;
+  margin-top:-10px;
+  margin-right:-50px !important;
+
+}
