@@ -1,5 +1,13 @@
- #FF0067    #FFA4C8    #FF70AA  
-  #BA004B    #8F003A   
-#D407FF    #F0A6FF  
- #FFFF
-#797d8b        
+verde jade
+#43D1AF principal
+#2c9586
+#92ceb5
+beige
+#f7f4d1
+#f6e7ae
+caky
+#c9b674
+gris
+#797D8B
+fondos
+#F7F7F7

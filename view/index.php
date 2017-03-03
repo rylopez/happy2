@@ -136,7 +136,7 @@ function scaleBannerVideoSize(element){
   
 </head>
 <body>
-<nav class="navbar navbar-inverse" >
+<nav class="navbar navbar-inverse"  style="background: black">
   
   
   
@@ -184,12 +184,7 @@ function scaleBannerVideoSize(element){
       <li><a href="#">Para Ellos</a></li>
       <li><a href="#">Sexo Inteligente</a></li>
       <li><a href="#">Para Ellos</a></li>
-          <?php 
-           
-        if(!isset($_SESSION["id_usuario"])){  
-            }else{
-         include_once("components/menu.php");
-         } 
+         <?php
             if(!isset($_SESSION["id_usuario"])){  ?>
             <li><a href="#" class="azulrey" data-toggle="modal" data-target="#myModal"> Iniciar Sesión</a></li>
        <?php }else{
