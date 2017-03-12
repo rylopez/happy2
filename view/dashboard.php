@@ -12,8 +12,9 @@
   <title>Happy Sex and Life</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="recursos/css/custom.css" rel="stylesheet" />
   <link rel="stylesheet" href="recursos/css/estilo.css">
+  <link href="recursos/css/custom.css" rel="stylesheet" />
+  
   <link rel="stylesheet" type="text/css" href="recursos/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="recursos/plugins/sweetalert/dist/sweetalert.css">
   <link rel="stylesheet" href="recursos/plugins/font-awesome/css/font-awesome.min.css">
@@ -33,16 +34,7 @@
                 }
                 });
 
-       $('.menu a').hover(function() {
-                $(this).stop().animate({
-                   opacity: 1
-                 }, 200);
-                    }, function() {
-               $(this).stop().animate({
-                opacity: 0.3
-                 }, 200);
-              });
- 
+       
   $("#tipoproducto").change(function () {
            $("#tipoproducto option:selected").each(function () {
             elegido=$(this).val();
@@ -62,6 +54,12 @@
      $('[data-toggle="tooltip"]').tooltip(); 
       
        });
+  function openmodal(pagina,id){
+          $("#myModal").modal('show');
+          $.post("abrirmodal.php",{pag:pagina,uid:id},function(data){
+            $("#myModal").html(data);
+          });
+        }
 </script>
   
 </head>
@@ -94,7 +92,7 @@
     <a   data-toggle="dropdown" id="nomusu" ><i class="fa fa-user" aria-hidden="true"></i>
  <?php echo "".($_SESSION["nombre"])." ".($_SESSION["apellido"]);?><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="index.php?p=<?php echo base64_encode("actualizar_usuario");?>&ui=<?php echo base64_encode($_SESSION["id_usuario"]); ?>">Actualizar mi perfil</a></li>
+      <li><a href="#"onclick="openmodal('actualizar_usuario','<?php echo $_SESSION["id_usuario"]; ?>')" >Actualizar mi perfil</a></li>
       <li class="divider"></li>
       <li><a href="cerrarsesion.php">Cerrar Sesión</a></li>      
     </ul>
@@ -105,7 +103,7 @@
             </div>
         </div>
         <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+        <nav class="navbar-default navbar-side"  role="navigation" >
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                  
@@ -122,8 +120,16 @@
         </nav>
 
         <?php include_once("components/comp.pagesdashboard.php") ?>
+        <div class="modal fade" id="myModal" role="dialog" >         
+          
+        
+       
+    </div>
 
         </div>
+
+        
+    <!--
     <div class="footer">
       
     
@@ -132,6 +138,6 @@
                     &copy; Yohanny Lopez
                 </div>
             </div>
-        </div>
+        </div> -->
 </body>
 </html>

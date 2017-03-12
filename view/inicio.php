@@ -11,8 +11,17 @@
                   <br>
                   <i style="font-family:'lacite';font-size: 1em">-Dans Vega</i>
                   <br>
-                  <a  href="#" data-toggle="modal" data-target="#myModal" class="btn guardar"><h4>Iniciar sesión</h4></a>
-                  <a  href="index.php?p=<?php echo base64_encode('nuevo_usuario'); ?>"  class="btn cancelar"><h4>Registrate</h4></a>
+
+                  <?php    
+        if(!isset($_SESSION["id_usuario"])){ ?>
+          <a  href="#" onclick="openmodal('logueo','0')" class="btn guardar"><h4>Iniciar sesión</h4></a>
+                  <a  href="#" onclick="openmodal('nuevo_usuario','0')"  class="btn cancelar"><h4>Registrate</h4></a>
+            <?php }else{ ?>
+          <a  href="#" onclick="openmodal('logueo','0')" class="btn guardar"><h4>Comprar</h4></a>
+                  <a  href="#" onclick="openmodal('nuevo_usuario','0')"  class="btn guardar"><h4>Educarme</h4></a>
+        <?php }    ?>
+
+                 
                 </div>
             </div>
         </div>

@@ -1,23 +1,22 @@
 <?php
   
-
+echo $ui;
   require_once("../model/db_conn.php");
   require_once("../model/usuarios.class.php");
 
  
-  $usuario = Gestion_Usuarios::ReadbyId(base64_decode($_REQUEST["ui"]));
+  $usuario = Gestion_Usuarios::ReadbyId($ui);
 
 ?>
- <div class="row contenedor">
-<div class="col-md-3 col-lg-2 ">
-</div>
-<div class="col-sm-12 col-md-7 col-lg-9 formulario">
+<div  class="modal-dialog modal-lg" width="410" >  
+
  
 <div class="form-style-6">
 
  
   <form   action="../controller/usuarios.controller.php" method="POST">
         <h3 >Actualizar Usuario</h3>
+       
         
           <select name="tipo_documento"  required data-toggle="tooltip"  title="Tipo de documento" >
             <option value="" disabled selected>Seleccione tipo de documento</option>
@@ -127,7 +126,5 @@
           
   </form>
   </div>
-  </div>
-  <div class="col-md-4 col-lg-1 ">
-</div>
+ 
   </div>

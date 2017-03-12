@@ -4,7 +4,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
 
 ?> 
 <li >
-   <a href="dashboard.php?p=<?php echo base64_encode('inicio_menu')?>" ><h3><i class="fa fa-home fa-2x" aria-hidden="true"></i> Inicio</h3></a>
+   <a href="dashboard.php?p=<?php echo base64_encode('')?>" ><h3><i class="fa fa-home fa-2x" aria-hidden="true"></i> Inicio</h3></a>
 </li>
 <li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_usuarios')?>"><h3 ><i class="fa fa-users fa-2x" aria-hidden="true"></i> Usuarios</h3></a></li>
 <li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_paginas')?>"><h3 ><i class="fa fa-file-code-o fa-2x" aria-hidden="true"></i> Paginas</h3></a></li>

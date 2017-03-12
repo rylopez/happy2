@@ -32,15 +32,7 @@
                 }
                 });
 
-       $('.menu a').hover(function() {
-                $(this).stop().animate({
-                   opacity: 1
-                 }, 200);
-                    }, function() {
-               $(this).stop().animate({
-                opacity: 0.3
-                 }, 200);
-              });
+      
  
   $("#tipoproducto").change(function () {
            $("#tipoproducto option:selected").each(function () {
@@ -131,6 +123,12 @@ function scaleBannerVideoSize(element){
 
     });
 }
+ function openmodal(pagina,id){
+          $("#myModal").modal('show');
+          $.post("abrirmodal.php",{pag:pagina,uid:id},function(data){
+            $("#myModal").html(data);
+          });
+        }
 
  </script>
   
@@ -161,7 +159,7 @@ function scaleBannerVideoSize(element){
     
     <a   data-toggle="dropdown" id="nomusu" > <?php echo "".($_SESSION["nombre"])." ".($_SESSION["apellido"]);?><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="index.php?p=<?php echo base64_encode("actualizar_usuario");?>&ui=<?php echo base64_encode($_SESSION["id_usuario"]); ?>">Actualizar mi perfil</a></li>
+      <li><a href="#"onclick="openmodal('actualizar_usuario','<?php echo $_SESSION["id_usuario"]; ?>')" >Actualizar mi perfil</a></li>
       <li class="divider"></li>
       <li><a href="cerrarsesion.php">Cerrar Sesión</a></li>      
     </ul>
@@ -177,7 +175,7 @@ function scaleBannerVideoSize(element){
 
   <div>
 
-    <ul style="list-style:none; font-family:'lacite' ">
+    <ul style="list-style:none; font-family:'Helvetica';text-transform: uppercase; ">
       <li><a href="index.php?p=<?php echo base64_encode('')?>">
       Inicio</a></li>
       <li><a href="#">Para Ellas</a></li>
@@ -186,10 +184,10 @@ function scaleBannerVideoSize(element){
       <li><a href="#">Para Ellos</a></li>
          <?php
             if(!isset($_SESSION["id_usuario"])){  ?>
-            <li><a href="#" class="azulrey" data-toggle="modal" data-target="#myModal"> Iniciar Sesión</a></li>
+            <li><a href="#" onclick="openmodal('logueo','0')"> Iniciar Sesión</a></li>
        <?php }else{
           ?>
-          <li><a href="cerrarsesion.php"><h2> Cerrar Sesión</h2></a></li>
+          <li><a href="cerrarsesion.php"> Cerrar Sesión</a></li>
       <?php  } ?>
     </ul>
  
@@ -204,7 +202,7 @@ function scaleBannerVideoSize(element){
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog" >         
           
-   <?php include_once("logueo.php") ?>      
+        
        
     </div>
   </div>

@@ -4,21 +4,21 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
 
 ?> 
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
+        <div id="page-wrapper"  >
             <div id="page-inner">
                 <div class="row">
                     <div class="col-lg-12">
-                     <h2 class='gestionar'>ADMINISTRA TU DASHBOARD</h2>   
+                     <h2 class='gestionar' >ADMINISTRA TU DASHBOARD</h2>   
                     </div>
                 </div>              
                  <!-- /. ROW  -->
                   <hr />
                 
                   <!-- /. ROW  --> 
-                <div class="row text-center pad-top">
+                <div class="row text-center pad-top" >
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                          <a href="blank.html" >
+                          <a href="#" onclick="openmodal('nuevo_usuario','0')" >
                             <i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>
                             <h5>Nuevo Usuario</h5>
                         </a>
@@ -29,7 +29,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#" onclick="openmodal('nueva_publicacion','0')" >
  <i class="fa fa-file-text fa-5x"></i>
                       <h5>Nueva Publicacion</h5>
                       </a>
@@ -39,7 +39,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#" onclick="openmodal('nuevo_producto','0')" >
  <i class="fa fa-industry fa-5x"></i>
                       <h5>Nuevo Producto</h5>
                       </a>
@@ -49,7 +49,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#"  >
  <i class="fa fa-file-code-o fa-5x"></i>
                       <h4>Edita El View</h4>
                       </a>
@@ -102,7 +102,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
           
     </div>
              <!-- /. PAGE INNER  -->
-            </div>
+  </div>
          <!-- /. PAGE WRAPPER  -->
   <?php }
 elseif ($_SESSION["id_rol"]==2) {//menu empleado
@@ -121,7 +121,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                 <div class="row text-center pad-top">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                          <a href="blank.html" >
+                          <a href="#" onclick="openmodal('nuevo_usuario','0')" >
                             <i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>
                             <h5>Nuevo Usuario</h5>
                         </a>
@@ -132,7 +132,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#" onclick="openmodal('nueva_publicacion','0')" >
  <i class="fa fa-file-text fa-5x"></i>
                       <h5>Nueva Publicacion</h5>
                       </a>
@@ -142,7 +142,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#" onclick="openmodal('nuevo_producto','0')" >
  <i class="fa fa-industry fa-5x"></i>
                       <h5>Nuevo Producto</h5>
                       </a>
@@ -205,7 +205,7 @@ elseif ($_SESSION["id_rol"]==4) {//menu experto
                 <div class="row text-center pad-top">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                          <a href="blank.html" >
+                          <a href="#" onclick="openmodal('nuevo_usuario','0')" >
                             <i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>
                             <h5>Nuevo Usuario</h5>
                         </a>
@@ -216,7 +216,7 @@ elseif ($_SESSION["id_rol"]==4) {//menu experto
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="#" onclick="openmodal('nueva_publicacion','0')">
  <i class="fa fa-file-text fa-5x"></i>
                       <h5>Nueva Publicacion</h5>
                       </a>

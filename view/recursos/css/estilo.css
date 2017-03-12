@@ -204,13 +204,13 @@ body {
   padding: 0;
   color: white;
   text-align: center;
-  font-size:50px !important; 
+  font-size:30px !important; 
   
   
 }
 #overlay ul li a:hover {  
   
-  font-size:80px !important; 
+  font-size:50px !important; 
   
 }
 
@@ -423,3 +423,4 @@ body {
   margin-right:-50px !important;
 
 }
+

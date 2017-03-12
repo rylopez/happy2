@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -10,16 +11,16 @@
            
         
 ?>
-<div class="row contenedor">
-<div class="col-md-3 col-lg-2 ">
-</div>
-<div class="col-sm-12 col-md-7 col-lg-9 ">
+<div  class="modal-dialog modal-lg" width="410" >  
+
  
 <div class="form-style-6">
 
  
   <form   action="../controller/usuarios.controller.php"  method="POST">
         <h3 ><?php echo $titulo ?></h3>
+        
+
         
           
           <select name="tipo_documento"  required data-toggle="tooltip" title="Tipo De Documento" >
@@ -127,9 +128,7 @@
 
           
   </form>
-  </div>
-  </div>
-  <div class="col-md-4 col-lg-1 ">
-</div>
  
+ 
+  </div>
   </div>
