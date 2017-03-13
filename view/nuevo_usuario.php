@@ -76,6 +76,7 @@
     
         if(!isset($_SESSION["id_usuario"])){ ?>
         <input name="id_rol"  value="3" type="hidden" />
+        <input name="location"  value="index" type="hidden" />
           
         <?php    }else{ 
           if ($_SESSION["id_rol"]==1) {?>
@@ -87,7 +88,7 @@
                     <option value="3">Cliente</option>
                     <option value="4" >Experto</option>                     
                 </select>
-         
+         <input name="location"  value="dashboardadmin" type="hidden"/>
         <?php }else{  ?>
            
                 <select    name="id_rol" required placeholder="Rol Usuario" data-toggle="tooltip"  title="Rol Usuario" >
@@ -95,6 +96,7 @@
                     <option value="2">Empleado</option>
                     <option value="3">Cliente</option>                    
                 </select>
+                <input name="location"  value="dashboard" type="hidden"/>
             
       <?php } } ?>
       
@@ -118,9 +120,12 @@
          if ($_SESSION["id_rol"]==1 ) {  
       ?>
       
-      <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
+      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
       <?php 
-       }}
+       }else{?>
+       <a  class=" btn cancelar" href="dashboard.php">Cancelar</a>
+
+       <?php }}
       ?>
             
 

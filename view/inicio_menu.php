@@ -59,7 +59,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="DASHBOARD.php?p=<?php echo base64_encode('nuevo_producto')?>" >
  <i class="fa fa-shopping-cart fa-5x"></i>
                       <h4>Pedidos </h4>
                       </a>

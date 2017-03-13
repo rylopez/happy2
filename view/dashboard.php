@@ -22,11 +22,17 @@
   
   <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 
-  <script src="recursos/plugins/bootstrap/js/bootstrap.min.js"></script>
+  
   <script type="text/javascript" charset="utf8" src="recursos/plugins/datatable/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="recursos/plugins/sweetalert/dist/sweetalert.min.js"></script>
-
+<script src="recursos/plugins/bootstrap/js/bootstrap.min.js"></script>
  <script type="text/javascript">
+  function openmodal(pagina,id){
+          $("#myModal").modal('show');
+          $.post("abrirmodal.php",{pag:pagina,uid:id},function(data){
+            $("#myModal").html(data);
+          });
+        };
     $(document).ready( function () {
               $('#datatable').DataTable({  
                "language": {               
@@ -42,7 +48,7 @@
             $("#talla").html(data);
             });            
         });
-   })
+   });
   
    <?php
 
@@ -52,14 +58,18 @@
                   }
       ?>
      $('[data-toggle="tooltip"]').tooltip(); 
+     $('#nav-icon').click(function(){
+    $(this).toggleClass('animate-icon');
+    $('#overlay').fadeToggle();
+     });
+       $('#overlay').click(function(){
+       $('#nav-icon').removeClass('animate-icon');
+        $('#overlay').toggle();
+       });
+
       
        });
-  function openmodal(pagina,id){
-          $("#myModal").modal('show');
-          $.post("abrirmodal.php",{pag:pagina,uid:id},function(data){
-            $("#myModal").html(data);
-          });
-        }
+ 
 </script>
   
 </head>

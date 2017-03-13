@@ -73,7 +73,7 @@ echo $ui;
     
         if(!isset($_SESSION["id_usuario"])){ ?>
         <input name="id_rol" value="<?php echo $usuario[13] ?>"  type="hidden" />
-          
+        <input name="location"  value="index" type="hidden"/>
         <?php    }else{ 
           if ($_SESSION["id_rol"]==1) {?>
         
@@ -84,7 +84,7 @@ echo $ui;
                     <option value="3" <?php if($usuario[13] == "3"){ echo "selected"; } ?>>Cliente</option>
                     <option value="4" <?php if($usuario[13] == "4"){ echo "selected"; } ?>>Experto</option>                     
                 </select>
-         
+                <input name="location"  value="dashboardadmin" type="hidden"/>
         <?php }else{  ?>
            
                 <select    name="id_rol" required data-toggle="tooltip"  title="Rol Usuario">
@@ -92,7 +92,7 @@ echo $ui;
                     <option value="2" <?php if($usuario[13] == "2"){ echo "selected"; } ?>>Empleado</option>
                     <option value="3" <?php if($usuario[13] == "3"){ echo "selected"; } ?>>Cliente</option>                    
                 </select>
-            
+             <input name="location"  value="dashboard" type="hidden"/>
       <?php } } ?>
       
       
@@ -115,9 +115,11 @@ echo $ui;
          if ($_SESSION["id_rol"]==1 ) {  
       ?>
       
-      <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
+      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
       <?php 
-       }}
+       }else{?>
+       <a  class=" btn cancelar" href="dashboard.php">Cancelar</a>
+     <?php  }}
       ?>
             
 

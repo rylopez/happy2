@@ -1,8 +1,5 @@
 
- <div class="row contenedor">
-<div class="col-md-3 col-lg-2 ">
-</div>
-<div class="col-sm-12 col-md-7 col-lg-9 formulario">
+ <div  class="modal-dialog modal-lg" width="410" >  
  
 <div class="form-style-6">
 
@@ -58,13 +55,11 @@
 
 
       <button class="guardar"   type="botton" name="acc" value="c">Guardar</button>
-      <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a>
+      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a>
             
   </form>
   </div>
   </div>
-  <div class="col-md-4 col-lg-1 ">
-</div>
-  </div>
+  
 
 	

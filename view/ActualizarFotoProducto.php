@@ -5,13 +5,10 @@
   require_once("../model/productos.class.php");
 
  
-  $producto=Gestion_Productos::ReadbyId(base64_decode($_REQUEST["ui"]));
+  $producto=Gestion_Productos::ReadbyId($ui);
 
 ?>
- <div class="row contenedor">
-<div class="col-md-3 col-lg-2 ">
-</div>
-<div class="col-sm-12 col-md-7 col-lg-9 formulario">
+ <div  class="modal-dialog modal-lg" width="410" >  
  
 <div class="form-style-6">
 
@@ -46,6 +43,4 @@
   </form>
   </div>
   </div>
-  <div class="col-md-4 col-lg-1 ">
-</div>
-</div>
+  

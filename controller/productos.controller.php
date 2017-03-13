@@ -35,7 +35,7 @@
 		 } catch (Exception $e) {
 				 $m=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			         }
-			    header("location: ../view/index.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
+			    header("location: ../view/dashboard.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
 			 
 
    	    break;
@@ -63,7 +63,7 @@
   if (($_FILES["foto1"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0)) {
   	$tipomsn = base64_encode("warning"); 
 	$msn= base64_encode("lo sentimos ha ocurrido un Error :(");
-	header("location: ../view/index.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
+	header("location: ../view/dashboard.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
 } else {
 	//ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
 	//y que el tamano del archivo no exceda los 100kb
@@ -130,14 +130,14 @@
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
-			header("location: ../view/index.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
+			header("location: ../view/dashboard.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
 		
 		
 		}
     }else {
     	$tipomsn = base64_encode("warning"); 
 		$msn= base64_encode("archivos no permitidos, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes ");
-		header("location: ../view/index.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
+		header("location: ../view/dashboard.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
 		
 	}
 }		
@@ -158,7 +158,7 @@ break;
   if (($_FILES["foto1"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0)) {
     $tipomsn = base64_encode("warning"); 
   $msn= base64_encode("lo sentimos ha ocurrido un Error :(");
-  header("location: ../view/index.php?p=".base64_encode('actualizar_foto_producto')."&m=".$msn."&tm=".$tipomsn);
+  header("location: ../view/dashboard.php?p=".base64_encode('actualizar_foto_producto')."&m=".$msn."&tm=".$tipomsn);
 } else {
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
@@ -175,7 +175,7 @@ break;
       if ((file_exists("../view/recursos/productos/" .$referencia."_foto1")) || (file_exists("../view/recursos/productos/" .$referencia."_foto2")) || (file_exists("../view/recursos/productos/" .$referencia."_foto3")))  {
       $tipomsn = base64_encode("warning"); 
        $msn= base64_encode("lo sentimos estos archivos se encuentran repetidos :(");
-       header("location: ../view/index.php?p=".base64_encode('actualizar_foto_producto')."&m=".$msn."&tm=".$tipomsn); 
+       header("location: ../view/dashboard.php?p=".base64_encode('actualizar_foto_producto')."&m=".$msn."&tm=".$tipomsn); 
             
          } else {
          if ($_FILES['foto1']['type'] =="image/jpg" ) {
@@ -228,7 +228,7 @@ break;
       } catch (Exception $e) {
         $mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
       }
-      header("location: ../view/index.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
+      header("location: ../view/dashboard.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
     
     
     }
@@ -252,7 +252,7 @@ break;
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
-			header("location: ../Gestion_productos.php?msn=".$mensaje."&tm=".$tipomensaje);
+			header("location: ../dashboard.php?msn=".$mensaje."&tm=".$tipomensaje);
 
 
 				break;

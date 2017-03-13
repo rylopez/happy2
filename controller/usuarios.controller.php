@@ -33,15 +33,26 @@
 			$estado         =$_POST["estado"];			
 			$id_rol			=$_POST["id_rol"];
 			$autor			=$_POST["autor"];
+			$location       =$_POST["location"];
 			$existente=Gestion_Usuarios::veref_exist($correo);
 			if ($existente[5] == $correo){
 				$msn=base64_encode(":( ha  ocurrido un error, El correo electronico ya se encuentra registrado");
 				$tipom=base64_encode("warning");
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);
+				if ($location=="index"){
+				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
+				}else{
+					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
+				}
 			}elseif ($edad < 18) {
 				$msn=base64_encode(":( ha  ocurrido un error, Debe ser mayor de edad para registrarse en esta pagina");
 				$tipom=base64_encode("warning");
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);
+				if ($location=="index"){
+				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
+				}else{
+					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
+				}
 			} else {
     	try {
 				Gestion_usuarios::Create($tipo_documento,$numero_documento,$clave1,$nombre,$apellido,$telefono,$direccion,$ciudad,$correo,$celular,$edad,$sexo,$estado,$id_rol,$autor);
@@ -51,7 +62,12 @@
 				 $msn=base64_encode(":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine());
 				 $tipom=base64_encode("warning");
 				}
-			  header("location: ../view/index.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);      
+			  if ($location=="index"){
+				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
+				}else{
+					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
+				}     
 			        
     }
 			
@@ -92,8 +108,12 @@
 				$msn=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 				$tipom=base64_encode("warning");
 			}
-			header("location: ../view/index.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom); 
-
+		if ($location=="index"){
+				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
+				}else{
+					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
+				}
 
 				break;
 			case 'd':
@@ -162,7 +182,12 @@
 
 				  }
 
-				header("Location: ../view/index.php?m=".$msn."&tm=".$tipo_msn);
+				if ($_SESSION==3){
+				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($_SESSION=="") {
+				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);
+				}else{
+					header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
+				}
 		break;
 				  		
 			}
