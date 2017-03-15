@@ -72,6 +72,7 @@ case  'actualizar_file_publicacion':
 
 	 require_once("actualizarfilepublicacion.php");
 	break;
+	
 
 
 }

@@ -43,7 +43,7 @@
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="c">Guardar</button>
-       <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_publicaciones"); ?>">Cancelar</a>
+       <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_publicaciones"); ?>">Cancelar</a>
             
   </form>
   </div>

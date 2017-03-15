@@ -49,7 +49,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="#"  >
+                           <a onclick="openmodal('gestion_views','0')" >
  <i class="fa fa-file-code-o fa-5x"></i>
                       <h4>Edita El View</h4>
                       </a>
@@ -163,7 +163,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
  <i class="fa fa-newspaper-o fa-5x"></i>
                       <h4>Publicaciones</h4>
                       </a>
@@ -173,7 +173,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           href="DASHBOARD.php?p=<?php echo base64_encode('gestion_productos')?>" >
  <i class="fa fa-object-group fa-5x"></i>
                       <h4>Productos</h4>
                       </a>
@@ -232,7 +232,7 @@ elseif ($_SESSION["id_rol"]==4) {//menu experto
                   
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
  <i class="fa fa-newspaper-o fa-5x"></i>
                       <h4>Publicaciones</h4>
                       </a>
@@ -242,7 +242,7 @@ elseif ($_SESSION["id_rol"]==4) {//menu experto
                   </div>
              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a onclick="openmodal('gestion_views','0')" >
  <i class="fa fa-file-code-o fa-5x"></i>
                       <h4>Edita El View</h4>
                       </a>

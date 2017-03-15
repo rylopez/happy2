@@ -72,7 +72,10 @@ case  'actualizar_file_publicacion':
 
 	 require_once("actualizarfilepublicacion.php");
 	break;
+case  'gestion_views':
 
+	 require_once("gestion_views.php");
+	break;
 
 }
 

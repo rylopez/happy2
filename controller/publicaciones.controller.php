@@ -176,7 +176,7 @@ break;
     }else {
       $tipomsn = base64_encode("warning"); 
     $msn= base64_encode("archivos no permitidos, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes ");
-    header("location: ../view/dashboard.php?p=".base64_encode('actualizar_File_producto')."&m=".$msn."&tm=".$tipomsn);
+    header("location: ../view/dashboard.php?p=".base64_encode('gestion_publicaciones')."&m=".$msn."&tm=".$tipomsn);
     
   }
 }   
