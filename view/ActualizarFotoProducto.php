@@ -1,3 +1,6 @@
+<script type="text/javascript">  
+$('[data-toggle="tooltip"]').tooltip(); 
+</script>
  <?php
   
 
@@ -35,7 +38,7 @@
 
 
       <button class="guardar"   type="botton" name="acc" value="uf">Guardar</button>
-      <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a>
+      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a>
             
 
 

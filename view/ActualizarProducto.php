@@ -1,3 +1,14 @@
+<script type="text/javascript">
+  $("#tipoproducto").change(function () {
+           $("#tipoproducto option:selected").each(function () {
+            elegido=$(this).val();
+            $.post("tipoproducto.php", { elegido: elegido }, function(data){
+            $("#talla").html(data);
+            });            
+        });
+   });
+$('[data-toggle="tooltip"]').tooltip(); 
+</script>
  <?php
   
 
@@ -67,7 +78,7 @@
 
 
       <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
-      <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a> 
+      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_productos"); ?>">Cancelar</a> 
             
 
 
