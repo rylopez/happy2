@@ -33,6 +33,11 @@
             $("#myModal").html(data);
           });
         };
+  function tipoproducto(valor){
+    alert(valor);
+
+  }
+
     $(document).ready( function () {
               $('#datatable').DataTable({  
                "language": {               

@@ -40,7 +40,7 @@
 
              
 
-            <select    name="id_tipoproducto" id="tipoproducto" required data-toggle="tooltip"  title="Tipo de Producto">
+            <select    name="id_tipoproducto" id="tipoproducto" required data-toggle="tooltip"  title="Tipo de Producto" onchange="javascript:miprueba(this.value)" ></script> >
                     <option value="" disabled selected>Seleccione tipo producto</option>
                     <option value="1">Salud Sexual</option>
                     <option value="2" >Lenceria</option>
@@ -62,4 +62,23 @@
   </div>
   
 
-	
+	<script>
+ $(document).ready( function () {
+         
+  $("#tipoproducto").change(function () {
+           $("#tipoproducto option:selected").each(function () {
+            elegido=$(this).val();
+            $.post("tipoproducto.php", { elegido: elegido }, function(data){
+            $("#talla").html(data);
+            });            
+        });
+   });
+  
+     $('[data-toggle="tooltip"]').tooltip(); 
+    
+       });
+
+      
+       
+ 
+</script>
