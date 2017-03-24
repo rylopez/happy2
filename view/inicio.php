@@ -37,110 +37,83 @@
 <div id="works">
   <div class="container"> <!-- Container -->
     <div class="section-title text-center center">
-      <h2>Our Portfolio</h2>
+      <h2>PRODUCTOS DESTACADOS</h2>
       <hr>
       <div class="clearfix"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+      <p>Estos son algunos de nuestros productos destacados, que te  brindaran satisfaccion y alegria Sexual</p>
+      <hr>
+      <div class="row">
+      <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 38%;"><a  href="#" onclick="openmodal('logueo','0')" class="btn guardar" ><h4>Ver mas productos</h4></a>
+      </div>
+      </div>
     </div>
-    <div class="categories">
-      <ul class="cat">
-        <li>
-          <ol class="type">
-            <li><a href="#" data-filter="*" class="active">All</a></li>
-            <li><a href="#" data-filter=".lorem">Web Design</a></li>
-            <li><a href="#" data-filter=".consectetur">Web Development</a></li>
-            <li><a href="#" data-filter=".dapibus">Branding</a></li>
-          </ol>
-        </li>
-      </ul>
-      <div class="clearfix"></div>
-    </div>
-    <div class="row">
+    
+    <div class="row" style="margin-top:2%">
       <div class="portfolio-items">
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/01.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Design</p>
+       <?php
+
+
+       require_once("../model/db_conn.php");
+       require_once("../model/productos.class.php");
+
+       $productos= Gestion_Productos::readrand();
+
+       foreach ($productos as $row) {
+
+
+
+       
+       echo "<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4'>
+          <div class='portfolio-item'>
+            <div class='hover-bg'> <a href='comprarproducto.php'>
+              <div class='hover-text'>
+                <h4>".$row["nombre"]."</h4>
+                <p>$".$row["valor_venta"]."</p>
               </div>
-              <img src="../Nuevacarpeta/img/portfolio/01.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src='".$row["url_foto1"]."' class='img-responsive' alt='Project Title'> </a> </div>
           </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 consectetur">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/02.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Development</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/02.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/03.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Design</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/03.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/04.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Design</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 consectetur">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/05.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Development</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 dapibus">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/06.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Branding</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 dapibus consectetur">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/07.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Development, Branding</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/07.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="../Nuevacarpeta/img/portfolio/08.jpg" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <p>Web Design</p>
-              </div>
-              <img src="../Nuevacarpeta/img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
+        </div>"; 
+        }  
+
+          
+
+      ?>
+        
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+<div class="bg"></div>
+<div class="jumbotron">
+  <h1>Bootstrap Jumbotron</h1>
+  <p class="lead">+ Parallax Effect using jQuery</p>
+</div>
+</div>
+<style type="text/css">
+  .bg {
+  background: url('recursos/imagenes/img_index_1.jpeg') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 350px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+  height: 350px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+}
+#main {
+  margin-top:0px;
+  position:relative;
+  background:#fff;
+}
+</style>
+<div class="container-fluid" id="main">
 <div class="container" id="content">
     <!-- Example row of columns -->
     <div class="row">
@@ -191,4 +164,6 @@
             </p>
         </div>
     </div>
+    </div>
     <hr>
+    </div>

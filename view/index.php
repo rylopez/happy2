@@ -129,12 +129,22 @@ function scaleBannerVideoSize(element){
             $("#myModal").html(data);
           });
         }
+var jumboHeight = $('.jumbotron').outerHeight();
+function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+}
+
+$(window).scroll(function(e){
+    parallax();
+});
+
 
  </script>
   
 </head>
 <body>
-<nav class="navbar navbar-inverse"  style="background: black">
+<nav class="navbar navbar-inverse navbar-fixed-top"  style="background: black">
   
   
   
