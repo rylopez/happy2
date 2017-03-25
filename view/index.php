@@ -129,15 +129,8 @@ function scaleBannerVideoSize(element){
             $("#myModal").html(data);
           });
         }
-var jumboHeight = $('.jumbotron').outerHeight();
-function parallax(){
-    var scrolled = $(window).scrollTop();
-    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-}
 
-$(window).scroll(function(e){
-    parallax();
-});
+
 
 
  </script>
@@ -215,7 +208,73 @@ $(window).scroll(function(e){
         
        
     </div>
+</div>
+
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Contactanos</h2>
+      <hr>
+      <p>Puedes ponerte en contacto  con nosotros por  cualquiera  de estos Medios.</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-map-marker fa-2x"></i>
+          <p>Antioquia,<br>
+            Medellin Colombia, Ant </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
+          <p>info@company.com</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
+          <p> +57 123 456 1234<br>
+            +57 321 456 1234</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Escribenos un mensaje</h3>
+      <form name="sentMessage" id="contactForm" novalidate  >
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+      <div class="social">
+        <h3>Follow us</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
+</div>
 
 <footer class="container-fluid text-center navbar-inverse">
   <img src="recursos/logos/logo.png" style="width:160px;">

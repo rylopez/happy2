@@ -71,7 +71,8 @@ class Gestion_imagenes{
 
         happy_BD::Disconnect();
     }
-
+    
+  
 
 	}
 

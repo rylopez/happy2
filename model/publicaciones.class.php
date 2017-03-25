@@ -99,7 +99,24 @@ class Gestion_Publicaciones{
 
         happy_BD::Disconnect();
     }
+    function readrand()
+    {
+        //instacioamos y nos conectamos a la  base de  datos
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        //crear  el  query  que vamos a realizar.
+        $consulta= "SELECT * FROM publicacion ORDER BY RAND() LIMIT 9";
+        $query=$conexion->prepare($consulta);
+        $query->execute();
+        // devolmemos el resultado en un arreglo
+        //Fetch:Es  el  resultado que arroja la   consultta   en forma   de vector   o matris  segun sea el caso
+        //para  consultas donde arroja mas de un dato    el  fetch  debe  ir  acompañado   con la  palabra ALL
+        $resultado=$query->fetchALL(PDO::FETCH_BOTH);
+        return $resultado;
 
+        happy_BD::Disconnect();
+    }
 
 
     
