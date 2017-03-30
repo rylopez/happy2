@@ -151,10 +151,12 @@
 				if($usuario_existe == 0){
 				       $msn=base64_encode("Debe de Registrarse Primero");
 				       $tipo_msn= base64_encode("warning");
+				      
 				    }
 				    elseif ($usuario["estado"]==0) {
 				       $msn= base64_encode("El usuario se encuentra inactivo,Por favor comunicate con el Admin del sistema");
 				       $tipo_msn= base64_encode("warning");
+				      
 				       
 				  }else{	
 				    		
@@ -182,9 +184,9 @@
 
 				  }
 
-				if ($_SESSION==3){
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($_SESSION=="") {
-				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);
+				if ($usuario["id_rol"]==3){
+				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);}elseif((count($usuario[0]))==0){
+			     	header("location: ../view/index.php?m=".$msn."&tm=".$tipom);
 				}else{
 					header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
 				}
