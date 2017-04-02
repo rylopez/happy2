@@ -58,6 +58,17 @@
    	    $talla             =$_POST["talla"];
    	    $talla             =strtoupper($talla);
    	    $autor             =$_POST["autor"];
+
+        $existe=Gestion_Productos::veref_exist($referencia);
+
+        if ((count($existe))>0) {
+          $tipomsn = base64_encode("warning"); 
+         $msn= base64_encode("La referencia; ya se encuentra registrada en el sistema ");
+          header("location: ../view/dashboard.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
+
+         
+        }else{
+
    	    
 
   if (($_FILES["foto1"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0) || ($_FILES["foto2"]["error"] > 0)) {
@@ -140,6 +151,7 @@
 		header("location: ../view/dashboard.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
 		
 	}
+}
 }		
 
 
