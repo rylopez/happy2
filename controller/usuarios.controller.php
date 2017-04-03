@@ -39,7 +39,7 @@
 				$msn=base64_encode(":( ha  ocurrido un error, El correo electronico ya se encuentra registrado");
 				$tipom=base64_encode("warning");
 				if ($location=="index"){
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
 				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
 				}else{
 					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
@@ -48,7 +48,7 @@
 				$msn=base64_encode(":( ha  ocurrido un error, Debe ser mayor de edad para registrarse en esta pagina");
 				$tipom=base64_encode("warning");
 				if ($location=="index"){
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
 				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
 				}else{
 					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
@@ -63,7 +63,7 @@
 				 $tipom=base64_encode("warning");
 				}
 			  if ($location=="index"){
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/index.php?m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
 				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
 				}else{
 					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);

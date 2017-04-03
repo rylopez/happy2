@@ -1,16 +1,16 @@
 <?php
 class Gestion_Productos{
 
-   function veref_exist($referencia,$id_empresa)
+   function veref_exist($referencia)
     {
         //instacioamos y nos conectamos a la  base de  datos
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
         //crear  el  query  que vamos a realizar.
-        $consulta= "SELECT * FROM productos WHERE referencia=? AND id_empresa=? ";
+        $consulta= "SELECT * FROM producto WHERE referencia=?  ";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($referencia,$id_empresa));
+        $query->execute(array($referencia));
         
         $resultado=$query->fetch(PDO::FETCH_BOTH);
         return $resultado;

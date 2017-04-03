@@ -37,6 +37,17 @@
    	  $texto            = $_POST["texto"];
    	  $id_producto   =$_POST["id_producto"];
    	  $autor             =$_POST["autor"];
+
+      $existe=Gestion_Publicaciones::veref_exist($titulo);
+
+        if ((count($existe))>0) {
+          $tipomsn = base64_encode("warning"); 
+         $msn= base64_encode("la publicacion ; ya se encuentra registrada en el sistema ");
+          header("location: ../view/dashboard.php?p=".base64_encode('gestion_publicaciones')."&m=".$msn."&tm=".$tipomsn);
+
+         
+        }else{
+
    	    
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -92,7 +103,7 @@
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
-			header("location: ../view/index.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
+			header("location: ../view/dashboard.php?p=".base64_encode('gestion_productos')."&m=".$msn."&tm=".$tipomsn);
 		
 		
 		}
@@ -102,6 +113,7 @@
 		header("location: ../view/dashboard.php?p=".base64_encode('nuevo_producto')."&m=".$msn."&tm=".$tipomsn);
 		
 	}
+}
 }		
 
 

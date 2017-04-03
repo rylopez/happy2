@@ -1,5 +1,21 @@
 <?php
 class Gestion_Publicaciones{
+    function veref_exist($titulo)
+    {
+        //instacioamos y nos conectamos a la  base de  datos
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        //crear  el  query  que vamos a realizar.
+        $consulta= "SELECT * FROM publicacion WHERE titulo=?  ";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($publicacion));
+        
+        $resultado=$query->fetch(PDO::FETCH_BOTH);
+        return $resultado;
+
+        happy_BD::Disconnect();
+    }
 
  
     function Create($titulo,$texto,$url_archivo,$id_producto,$autor){
