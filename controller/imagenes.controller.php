@@ -8,9 +8,8 @@
   $accion = $_REQUEST["acc"];
    switch ($accion) {
   case 'index1':
-
-
-    
+  $frase= $_POST["frase"];
+  $autor=$_POST["autor"];   
         
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -21,7 +20,7 @@
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/png");
-  $limite_kb = 5000;
+  $limite_kb =50000;
 
   if (in_array($_FILES['file']['type'], $permitidos) && $_FILES['file']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -59,7 +58,7 @@
       //almacenara true o false
        
       try {
-  Gestion_Imagenes::updateindex1($url_archivo,$ui);
+  Gestion_Imagenes::updateindex1($url_archivo,$frase,$autor,$ui);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         
@@ -84,8 +83,9 @@
 break;
 case 'index2':
 
-
-    
+ $frase= $_POST["frase"];
+$autor=$_POST["autor"];   
+           
         
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -96,7 +96,7 @@ case 'index2':
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/png");
-  $limite_kb = 5000;
+  $limite_kb = 50000;
 
   if (in_array($_FILES['file']['type'], $permitidos) && $_FILES['file']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -134,7 +134,7 @@ case 'index2':
       //almacenara true o false
        
       try {
-  Gestion_Imagenes::updateindex2($url_archivo,$ui);
+  Gestion_Imagenes::updateindex2($url_archivo,$frase,$autor,$ui);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         
@@ -158,9 +158,9 @@ case 'index2':
 
 break;
 case 'producto':
-
-
-    
+ $frase= $_POST["frase"];
+  $autor=$_POST["autor"];   
+            
         
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -171,7 +171,7 @@ case 'producto':
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/png");
-  $limite_kb = 5000;
+  $limite_kb = 50000;
 
   if (in_array($_FILES['file']['type'], $permitidos) && $_FILES['file']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -209,7 +209,7 @@ case 'producto':
       //almacenara true o false
        
       try {
-  Gestion_Imagenes::updateproductos($url_archivo,$ui);
+  Gestion_Imagenes::updateproductos($url_archivo,$frase,$autor,$ui);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         
@@ -234,8 +234,9 @@ case 'producto':
 break;
 case 'compras':
 
-
-    
+ $frase= $_POST["frase"];
+  $autor=$_POST["autor"];   
+            
         
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -246,7 +247,7 @@ case 'compras':
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/png");
-  $limite_kb = 5000;
+  $limite_kb = 50000;
 
   if (in_array($_FILES['file']['type'], $permitidos) && $_FILES['file']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -284,7 +285,7 @@ case 'compras':
       //almacenara true o false
        
       try {
-  Gestion_Imagenes::updatecompras($url_archivo,$ui);
+  Gestion_Imagenes::updatecompras($url_archivo,$frase,$autor,$ui);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         
@@ -309,8 +310,9 @@ case 'compras':
 break;
 case 'publicacion':
 
-
-    
+ $frase= $_POST["frase"];
+  $autor=$_POST["autor"];   
+            
         
 
   if ($_FILES["file"]["error"] > 0)  {
@@ -321,7 +323,7 @@ case 'publicacion':
   //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
   //y que el tamano del archivo no exceda los 100kb
   $permitidos = array("image/jpg", "image/jpeg", "image/png");
-  $limite_kb = 5000;
+  $limite_kb = 50000;
 
   if (in_array($_FILES['file']['type'], $permitidos) && $_FILES['file']['size'] <= $limite_kb * 1024){
     //esta es la ruta donde copiaremos la imagen
@@ -359,7 +361,7 @@ case 'publicacion':
       //almacenara true o false
        
       try {
-  Gestion_Imagenes::updatepublicaciones($url_archivo,$ui);
+  Gestion_Imagenes::updatepublicaciones($url_archivo,$frase,$autor,$ui);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         

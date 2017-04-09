@@ -643,7 +643,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
   content: "✓";
   font-weight: 600;
   padding-right: 10px;
-  color: #e75926;
+  color: #2c9586;
 }
 #about i.fa {
   float: left;

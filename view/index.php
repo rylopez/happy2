@@ -226,7 +226,7 @@ function scaleBannerVideoSize(element){
       </div>
       <div class="col-md-4">
         <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
-          <p>info@company.com</p>
+          <p>info@Happysexandlive.com</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -262,7 +262,7 @@ function scaleBannerVideoSize(element){
         <button type="submit" class="btn btn-default">Enviar</button>
       </form>
       <div class="social">
-        <h3>Follow us</h3>
+        <h3>Siguenos</h3>
         <ul>
           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter"></i></a></li>

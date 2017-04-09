@@ -76,6 +76,10 @@ case  'gestion_views':
 
 	 require_once("gestion_views.php");
 	break;
+	case  'detalle_producto':
+
+	 require_once("detalle_producto.php");
+	break;
 
 }
 

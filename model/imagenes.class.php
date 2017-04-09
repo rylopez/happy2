@@ -21,53 +21,53 @@ class Gestion_imagenes{
 
 
 
-  function updateindex1($url_archivo,$ui){
+  function updateindex1($url_archivo,$frase,$autor,$ui){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $consulta= "UPDATE imagenes SET img_index_1=?  WHERE id_imagenes=?";
+        $consulta= "UPDATE imagenes SET img_index_1=?,frase_index_1=?,autor_index_1=?  WHERE id_imagenes=?";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($url_archivo,$ui));
+        $query->execute(array($url_archivo,$frase,$autor,$ui));
 
         happy_BD::Disconnect();
     }
-    function updateindex2($url_archivo,$ui){
+    function updateindex2($url_archivo,$frase,$autor,$ui){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $consulta= "UPDATE imagenes SET img_index_2=?  WHERE id_imagenes=?";
+        $consulta= "UPDATE imagenes SET img_index_2=?,frase_index_2=?, autor_index_2=?  WHERE id_imagenes=?";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($url_archivo,$ui));
+        $query->execute(array($url_archivo,$frase,$autor,$ui));
 
         happy_BD::Disconnect();
     }
-      function updateproductos($url_archivo,$ui){
+      function updateproductos($url_archivo,$frase,$autor,$ui){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $consulta= "UPDATE imagenes SET img_productos=?  WHERE id_imagenes=?";
+        $consulta= "UPDATE imagenes SET img_productos=?, frase_productos=?, autor_productos=?  WHERE id_imagenes=?";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($url_archivo,$ui));
+        $query->execute(array($url_archivo,$frase,$autor,$ui));
 
         happy_BD::Disconnect();
     }
-      function updatecompras($url_archivo,$ui){
+      function updatecompras($url_archivo,$frase,$autor,$ui){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $consulta= "UPDATE imagenes SET img_compras=?  WHERE id_imagenes=?";
+        $consulta= "UPDATE imagenes SET img_compras=?, frase_compras=?,autor_compras=?  WHERE id_imagenes=?";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($url_archivo,$ui));
+        $query->execute(array($url_archivo,$frase,$autor,$ui));
 
         happy_BD::Disconnect();
     }
-      function updatepublicaciones($url_archivo,$ui){
+      function updatepublicaciones($url_archivo,$frase,$autor,$ui){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $consulta= "UPDATE imagenes SET img_publicaciones=?  WHERE id_imagenes=?";
+        $consulta= "UPDATE imagenes SET img_publicaciones=?,frase_publicaciones=?,autor_publicaciones=?  WHERE id_imagenes=?";
         $query=$conexion->prepare($consulta);
-        $query->execute(array($url_archivo,$ui));
+        $query->execute(array($url_archivo,$frase,$autor,$ui));
 
         happy_BD::Disconnect();
     }

@@ -27,7 +27,7 @@
         </div>
         <div class="filter"></div>
         <video autoplay loop class="fillWidth">
-            <source src="../../../video/video.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+            <source src="../../../video/video.mp4" type="video/mp4" />Tu navegador  no soporta este video</video>
         <div class="poster hidden">
             <img src="recursos/video/poster.jpg" alt="">
         </div>
@@ -43,7 +43,7 @@
       <p>Estos son algunos de nuestros productos destacados, que te  brindaran satisfaccion y alegria Sexual</p>
       <hr>
       <div class="row">
-      <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 38%;"><a  href="#" onclick="openmodal('logueo','0')" class="btn guardar" ><h4>Mas productos</h4></a>
+      <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 38%;"><a  href="index.php?p=<?php echo base64_encode('viewproducto')?>" class="btn guardar"><h4>Mas productos</h4></a>
       </div>
       </div>
     </div>
@@ -68,7 +68,8 @@
             <div class='hover-bg'> <a href='comprarproducto.php'>
               <div class='hover-text'>
                 <h4>".$row["nombre"]."</h4>
-                <p>$".$row["valor_venta"]."</p>
+                <p> Valor:$".$row["valor_venta"]."</p>
+                p>Descuento:".$row["descuento"]."%</p>
               </div>
               <img src='".$row["url_foto1"]."' class='img-responsive' alt='Project Title'> </a> </div>
           </div>
@@ -83,17 +84,6 @@
     </div>
   </div>
 </div>
-<div class="container">
-<div class="bg">
-   <div style="margin-left: 10%">
-        <i style="font-family:'lacite';font-size: 6em; color: white;">"Quiero  que  quemes mi  piel,  con el calor de  tú piel"</i>
-        <br>
-        <i style="font-family:'lacite';font-size: 3em; color: white;">Algun Enamorado</i>
-        <br>
-    </div>
-</div>
-
-</div>
 <?php 
  require_once("../model/db_conn.php");
 require_once("../model/imagenes.class.php");
@@ -101,6 +91,17 @@ require_once("../model/imagenes.class.php");
  $id=1;
   $img=Gestion_imagenes::ReadbyId($id);
 ?>
+<div class="bg">
+   <div style="margin-left: 15%">
+        <i style="font-family:'lacite';font-size: 4em; color: white;">"<?php echo $img["frase_index_1"]; ?>"</i>
+        <br>
+        <i style="font-family:'lacite';font-size: 2em; color: white;">-<?php echo $img["autor_index_1"]; ?></i>
+        <br>
+    </div>
+</div>
+
+
+
 <style type="text/css">
 
 .bg {
@@ -124,7 +125,7 @@ require_once("../model/imagenes.class.php");
       <h2>PUBLICACIONES DESTACADAS</h2>
       <hr>
       <div class="clearfix"></div>
-      <p>Podras ver algunos articulos  que te ayudaran a instruirte. El objetivo  de estos   es romper  el paradigma  de asociar que la sexualidad es vulgar. El objetivo es que encuentres la manera de  sentir y  disfrutar  mas.</p>
+      <p>Podras ver algunos articulos  que te ayudaran a instruirte. El objetivo  de estos   es romper  el paradigma  de asociar que la sexualidad es vulgar.Asi mismo podras tener  una idea mas clara, de como  complacer a  tu pareja.  Animate rompe los prejuicios y  busca siempre tu felicidad   con la  ayuda de tu tienda virtual  favorita.</p>
       <hr>
       <div class="row">
       <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 35%;"><a  href="#" onclick="openmodal('logueo','0')" class="btn guardar" ><h4>Mas publicaciones</h4></a>
@@ -167,23 +168,25 @@ require_once("../model/imagenes.class.php");
     </div>
   </div>
 </div>
-<div class="container">
+
 <div class="bg2">
-   <div style="margin-left: 10%">
-        <i style="font-family:'lacite';font-size: 6em; color: white;">"Quiero  que  quemes mi  piel,  con el calor de  tú piel"</i>
+   <div style="margin-left: 15%">
+        <i style="font-family:'lacite';font-size: 4em; color: white;">"<?php echo $img["frase_index_2"]; ?>"</i>
         <br>
-        <i style="font-family:'lacite';font-size: 3em; color: white;">Algun Enamorado</i>
+        <i style="font-family:'lacite';font-size: 2em; color: white;">-<?php echo $img["autor_index_2"]; ?></i>
         <br>
     </div>
 </div>
 
-</div>
+
 
 <style type="text/css">
 
 .bg2 {
   padding: 0px;
   margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   color: inherit;
    width: 100%;
   height: 450px; 
@@ -203,23 +206,23 @@ require_once("../model/imagenes.class.php");
       <hr>
     </div>
     <div class="row">
-      <div class="col-md-4"><img src="img/about.jpg" class="img-responsive"></div>
+      <div class="col-md-4"><img src="recursos/logos/logo.png" class="img-responsive"></div>
       <div class="col-md-4">
         <div class="about-text">
-          <h4>Who We Are</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum. </p>
+          <h4>Quienes somos</h4>
+          <p>Somos una tienda virtual de productos eroticos, destacando la sensualidad que debe de ir  de la  mano  del amor y de alegria. La sexualidad es parte  de  nuestra vida  cotidiana  y es un aspecto  tan importante  en los seres  humanos que  buscamos  no  solo vender un producto  sino tambien  contribuir a  que las personas se sientan mas seguras y felices en este aspecto.</p>
+          <p> </p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="about-text">
-          <h4>What We Do</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam.</p>
+          <h4>Qué Hacemos</h4>
+          <p>Ayudamos  a  romper los prejuicios sociales establecidos  al hablar de sexo, buscamos que las personas  cada dia hablen con mayor naturalidad del tema y que mejor manera de hacerlo con argumentos, por  ello en nuestro sitio web encontraras.</p>
           <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing commodo</li>
-            <li>Duis sed dapibus leo sed dapibus</li>
-            <li>Sed commodo nibh ante bibendum</li>
+            <li>Consejos de expertos</li>
+            <li>Consejos de personas comunes, que solo comparten experiencias</li>
+            <li>Productos de los cuales estamos seguros; te haran mas feliz</li>
+            <li>Informacion cientifica  referente al tema</li>
           </ul>
         </div>
       </div>
