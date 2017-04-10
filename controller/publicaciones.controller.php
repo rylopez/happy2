@@ -13,11 +13,12 @@
       $id_producto   =$_POST["id_producto"];
       $autor             =$_POST["autor"];
       $id_publicacion   =$_POST["id_publicacion"];
+      $tipo_publicacion =$_POST["tipo_publicacion"];
         
    	    
    	  
 		try {
-				Gestion_Publicaciones::Update($titulo,$texto,$id_producto,$autor,$id_publicacion);
+				Gestion_Publicaciones::Update($titulo,$texto,$id_producto,$autor,$id_publicacion,$tipo_publicacion);
 				$tipomsn = base64_encode("success"); 
 				$msn= base64_encode("su registro se Actualizo  correctamente :D");	
 						
@@ -30,23 +31,14 @@
    	    break;
    	
    	   case 'c':
-
-
    		
       $titulo       =strtoupper($_POST["Titulo"]);   
    	  $texto            = $_POST["texto"];
    	  $id_producto   =$_POST["id_producto"];
    	  $autor             =$_POST["autor"];
+      $tipo_publicacion =$_POST["tipo_publicacion"];
 
-      $existe=Gestion_Publicaciones::veref_exist($titulo);
-
-        if ((count($existe))>0) {
-          $tipomsn = base64_encode("warning"); 
-         $msn= base64_encode("la publicacion ; ya se encuentra registrada en el sistema ");
-          header("location: ../view/dashboard.php?p=".base64_encode('gestion_publicaciones')."&m=".$msn."&tm=".$tipomsn);
-
-         
-        }else{
+      
 
    	    
 
@@ -95,7 +87,7 @@
 			//almacenara true o false
 		   
 		  try {
-	     Gestion_Publicaciones::Create($titulo,$texto,$url_archivo,$id_producto,$autor);
+	     Gestion_Publicaciones::Create($titulo,$texto,$url_archivo,$id_producto,$autor,$tipo_publicacion);
 				$tipomsn = base64_encode("success"); 
 				$msn= base64_encode("Se creo la publicacion correctamente");
 				
@@ -114,7 +106,7 @@
 		
 	}
 }
-}		
+		
 
 
 break;
@@ -122,8 +114,7 @@ break;
 
 
        $titulo       =strtoupper($_POST["titulo"]);   
-      $url_file      =$_POST["url_file"];
-      $autor             =$_POST["autor"];
+      $url_file      =$_POST["url_file"];      
       $id_publicacion   =$_POST["id_publicacion"];
         
 
@@ -173,7 +164,7 @@ break;
       //almacenara true o false
        
       try {
-  Gestion_publicaciones::updatefile($url_archivo,$autor,$id_publicacion);
+  Gestion_publicaciones::updatefile($url_archivo,$id_publicacion);
         $tipomsn = base64_encode("success"); 
         $msn= base64_encode("el archivo de la publicacion, se actualizo exitosamente :D");
         

@@ -8,6 +8,50 @@
         });
    });
 $('[data-toggle="tooltip"]').tooltip(); 
+
+function soloLetras(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+function soloNumeros(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+
+function limpia() {
+    var val = document.getElementById("miInput").value;
+    var tam = val.length;
+    for(i = 0; i < tam; i++) {
+        if(!isNaN(val[i]))
+            document.getElementById("miInput").value = '';
+    }
+}
 </script>
  <?php
   
@@ -29,17 +73,17 @@ $('[data-toggle="tooltip"]').tooltip();
         
           <input  type="text" placeholder="Referencia" name="referencia"  required data-toggle="tooltip" title="Referencia" value="<?php echo $producto[1] ?>" />
               
-            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip" title="Nombre producto" value="<?php echo $producto[2] ?>"/>             
+            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip" title="Nombre producto" value="<?php echo $producto[2] ?>" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput" />             
             
-            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip" title="Valor de Compra" value="<?php echo $producto[3] ?>" />
+            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip" title="Valor de Compra" value="<?php echo $producto[3] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput" />
 
-            <input   type="number" name="valor_venta" placeholder="Valor Venta" required data-toggle="tooltip" title="Valor de Venta" value="<?php echo $producto[4] ?>" />
+            <input   type="number" name="valor_venta" placeholder="Valor Venta" required data-toggle="tooltip" title="Valor de Venta" value="<?php echo $producto[4] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput" />
 
-            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip" title=" Porcentaje Descuento" value="<?php echo $producto[5] ?>"/>
+            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip" title=" Porcentaje Descuento" value="<?php echo $producto[5] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput"/>
 
-            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip" title="Porcentaje Iva" value="<?php echo $producto[6] ?>" />
+            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip" title="Porcentaje Iva" value="<?php echo $producto[6] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput" />
 
-            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip" title="Cantidades Existentes" value="<?php echo $producto[12] ?>" />
+            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip" title="Cantidades Existentes" value="<?php echo $producto[12] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput" />
 
             
             <select    name="sexo"  required data-toggle="tooltip" title="Publico Objectivo" >

@@ -81,6 +81,11 @@ case  'gestion_views':
 	 require_once("detalle_producto.php");
 	break;
 
+	case  'detalle_publicacion':
+
+	 require_once("detalle_publicacion.php");
+	break;
+
 }
 
 

@@ -7,10 +7,10 @@ if ($_POST["elegido"]=="salud sexual") {
 	$id_tipoproducto=1;
 
 	$productos= Gestion_Productos::Readbytipo($id_tipoproducto);
-	echo "<h4>PRODUCTOS  DE TIPO SALUD SEXUAL </h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{ echo "<h4>PRODUCTOS  DE TIPO SALUD SEXUAL </h4>";
        foreach ($productos as $row) {
 
 
@@ -31,7 +31,7 @@ if ($_POST["elegido"]=="salud sexual") {
           
  
         </div>");
-         }  
+         } } 
 
           
     
@@ -40,10 +40,11 @@ elseif ($_POST["elegido"]=="lenceria") {
    $id_tipoproducto=2;
 
 	$productos= Gestion_Productos::Readbytipo($id_tipoproducto);
-	echo "<h4>PRODUCTOS  DE TIPO LENCERIA </h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>PRODUCTOS  DE TIPO LENCERIA </h4>";
+
        foreach ($productos as $row) {
 
 
@@ -64,7 +65,7 @@ elseif ($_POST["elegido"]=="lenceria") {
           
  
         </div>");
-         }  
+         }  }
  
 }
 elseif ($_POST["elegido"]=="Juguetes") {
@@ -72,10 +73,10 @@ elseif ($_POST["elegido"]=="Juguetes") {
 
 	$productos= Gestion_Productos::Readbytipo($id_tipoproducto);
 
-	echo "<h4>PRODUCTOS  DE TIPO JUGUETES SEXUALES</h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>PRODUCTOS  DE TIPO JUGUETES SEXUALES</h4>";
        foreach ($productos as $row) {
 
 
@@ -96,17 +97,17 @@ elseif ($_POST["elegido"]=="Juguetes") {
           
  
         </div>");
-         }  
+         } } 
    
 }
 elseif ($_POST["elegido"]=="estimulantes") {
    $id_tipoproducto=4;
 
 	$productos= Gestion_Productos::Readbytipo($id_tipoproducto);
-	echo "<h4>PRODUCTOS DE TIPO ESTIMULANTES</h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>PRODUCTOS DE TIPO ESTIMULANTES</h4>";
        foreach ($productos as $row) {
 
 
@@ -127,17 +128,17 @@ elseif ($_POST["elegido"]=="estimulantes") {
           
  
         </div>");
-         }  
+         }  }
   
 }
 elseif ($_POST["elegido"]=="Hombre") {
     $sexo="hombre";
 
 	$productos= Gestion_Productos::Readbysexo($sexo);
-	echo "<h4>PRODUCTOS PARA HOMBRES</h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>PRODUCTOS PARA HOMBRES</h4>";
        foreach ($productos as $row) {
 
 
@@ -158,16 +159,16 @@ elseif ($_POST["elegido"]=="Hombre") {
           
  
         </div>");
-         }
+         }}
      }
 elseif ($_POST["elegido"]=="Mujer") {
      $sexo="mujer";
 
 	$productos= Gestion_Productos::Readbysexo($sexo);
-	echo "<h4>PRODUCTOS PARA MUJERES</h4>";
-	if (!isset($productos)) {
+	
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>PRODUCTOS PARA MUJERES</h4>";
        foreach ($productos as $row) {
 
 
@@ -188,19 +189,19 @@ elseif ($_POST["elegido"]=="Mujer") {
           
  
         </div>");
-         }
+         }}
 }else{
 
 	 $var=$_POST["elegido"];
 	 $like="%".$var."%";
 
 
-	echo "<h4>RESULTADOS DE SU BUSQUEDA... </h4>";
+	
 	
 	$productos= Gestion_Productos::Readbylike($like);
-	if (!isset($productos)) {
+	if (count($productos)==0) {
 		echo "<h2> NO SE ENCONTRARON RESULTADOS DE LA BUSQUEDA </h2>";
-	}
+	}else{echo "<h4>RESULTADOS DE SU BUSQUEDA... </h4>";
        foreach ($productos as $row) {
 
 
@@ -221,7 +222,7 @@ elseif ($_POST["elegido"]=="Mujer") {
           
  
         </div>");
-         }
+         }}
 }
 
    

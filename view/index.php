@@ -50,6 +50,14 @@
             });            
         });
    });
+     $("#filtropublicacion").change(function () {
+           $("#filtropublicacion option:selected").each(function () {
+            elegido=$(this).val();
+            $.post("filtropublicacion.php", { elegido: elegido }, function(data){
+            $("#publicaciones").html(data);
+            });            
+        });
+   });
 
   
    <?php

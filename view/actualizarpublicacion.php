@@ -28,7 +28,16 @@ $('[data-toggle="tooltip"]').tooltip();
         <input   type="text" placeholder="Titulo " name="Titulo"  required data-toggle="tooltip"  title="Titulo" value="<?php echo $publicacion[1] ?>" />
            <textarea name="texto" placeholder="texto" COLS=100 ROWS=30  data-toggle="tooltip" title="Texto"><?php echo $publicacion[2] ?></textarea>
               
-           
+           <input type="text" name="autor" value="<?php echo $publicacion["autor"] ?>"  required data-toggle="tooltip"  title="Autor" required>
+           <select name="tipo_publicacion"  data-toggle="tooltip"  title="tipo_producto"  required >
+            <option value="x" disabled selected>Seleccione una opcion</option>
+            
+             <option value="relatos" <?php if($publicacion["tipo_publicacion"] == "relatos"){ echo "selected"; } ?>>Relato</option>
+             <option value="informacion cientifica" <?php if($publicacion["tipo_publicacion"] == "informacion cientifica"){ echo "selected"; } ?>>Informacion Cientifica</option>
+             <option value="habla el experto" <?php if($publicacion["tipo_publicacion"] == "habla el experto"){ echo "selected"; } ?>>Habla El Experto</option>
+             <option value="mitos y verdades" <?php if($publicacion["tipo_publicacion"] == "mitos y verdades"){ echo "selected"; } ?>>Mitos y Verdades</option>
+             
+          </select>
 
             <select    name="id_producto"  required data-toggle="tooltip"  title="Producto a promocionar">
                     <option value="" disabled selected>Producto a Promocionar</option>
@@ -44,7 +53,7 @@ $('[data-toggle="tooltip"]').tooltip();
                 </select>
              
 
-             <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
+           
              <input type="hidden" name="id_publicacion" value="<?php echo $publicacion[0] ?>">
             
 

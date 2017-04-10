@@ -5,7 +5,7 @@
       <div id="loguear" class="row">
       <div class="col-sm-10 col-md-10 col-lg-10">
       
-      <input placeholder="Correo Electronico" name="correo" class="form-control"  type="email" required>
+      <input placeholder="Correo Electronico" name="correo" class="form-control"  type="email" required id="email" onblur="validarEmail();"  id="miInput">
       <br>
       <input placeholder="Ingrese Contraseña" name="clave" class="form-control"  type="password" required>
       <br>
@@ -20,3 +20,12 @@
       </div>
       </form>
 </div>
+<script type="text/javascript">
+      function validarEmail(  ) {
+  var email = $("input#email").val();
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ( !expr.test(email) )
+        alert("Error: La dirección de correo " + email + " es incorrecta.");
+}
+
+</script>

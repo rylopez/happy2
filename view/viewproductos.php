@@ -82,7 +82,7 @@ require_once("../model/productos.class.php");
 
 
 
-       $productos= Gestion_Productos::ReadAll();
+       $productos= Gestion_Productos::Readcantidad();
 
        foreach ($productos as $row) {
 

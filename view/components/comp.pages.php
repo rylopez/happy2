@@ -13,6 +13,10 @@ switch ($page) {
 	case 'viewproducto':
 		require_once("viewproductos.php");
 	break;	
+	case 'viewpublicaciones':
+		require_once("viewpublicaciones.php");
+	break;	
+
 
 	
 	

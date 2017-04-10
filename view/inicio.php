@@ -17,8 +17,8 @@
           <a  href="#" onclick="openmodal('logueo','0')" class="btn guardar"><h4>Iniciar sesión</h4></a>
                   <a  href="#" onclick="openmodal('nuevo_usuario','0')"  class="btn cancelar"><h4>Registrate</h4></a>
             <?php }else{ ?>
-          <a  href="#" onclick="openmodal('logueo','0')" class="btn guardar"><h4>Comprar</h4></a>
-                  <a  href="#" onclick="openmodal('nuevo_usuario','0')"  class="btn guardar"><h4>Educarme</h4></a>
+          <a  href="index.php?p=<?php echo base64_encode('viewproducto')?>" class="btn guardar"><h4>Comprar</h4></a>
+                  <a  href="index.php?p=<?php echo base64_encode('viewpublicaciones')?>""  class="btn guardar"><h4>Educarme</h4></a>
         <?php }    ?>
 
                  
@@ -129,7 +129,7 @@ require_once("../model/imagenes.class.php");
       <p>Podras ver algunos articulos  que te ayudaran a instruirte. El objetivo  de estos   es romper  el paradigma  de asociar que la sexualidad es vulgar.Asi mismo podras tener  una idea mas clara, de como  complacer a  tu pareja.  Animate rompe los prejuicios y  busca siempre tu felicidad   con la  ayuda de tu tienda virtual  favorita.</p>
       <hr>
       <div class="row">
-      <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 35%;"><a  href="#" onclick="openmodal('logueo','0')" class="btn guardar" ><h4>Mas publicaciones</h4></a>
+      <div class="col-xs-10 col-sm-8 col-md-4 col-lg-4" style="margin-left:38%;margin-right: 35%;"><a  href="index.php?p=<?php echo base64_encode('viewpublicaciones')?>"" class="btn guardar" ><h4>Mas publicaciones</h4></a>
       </div>
       </div>
     </div>
@@ -151,13 +151,14 @@ require_once("../model/imagenes.class.php");
        
        echo "<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='comprarproducto.php'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_publicacion','".$row['id_publicacion']."') &quot;>
               <div class='hover-text'>
                 <h4>".$row["titulo"]."</h4>
                 
               </div>
               <img src='".$row["url_archivo"]."' class='img-responsive' alt='Project Title'> </a> </div>
           </div>
+
         </div>"; 
         }  
 

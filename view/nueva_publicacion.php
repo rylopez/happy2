@@ -24,6 +24,17 @@ $('[data-toggle="tooltip"]').tooltip();
 
           <input   type="text" placeholder="Titulo " name="Titulo"  required data-toggle="tooltip"  title="Titulo" />
            <textarea name="texto" placeholder="Escribe aqui el Articulo" COLS=100 ROWS=30  data-toggle="tooltip" title="Texto"></textarea>
+          <input type="text" name="autor"   required data-toggle="tooltip"  title="Autor" required>
+           <select name="tipo_publicacion"  data-toggle="tooltip"  title="tipo_producto"  required >
+            <option value="x" disabled selected>Seleccione una opcion</option>
+             <option value="relatos">Relato</option>
+             <option value="informacion cientifica">Informacion Cientifica</option>
+             <option value="habla el experto">Habla El Experto</option>
+             <option value="mitos y verdades">Mitos y Verdades</option>
+             
+          </select>
+            
+
               
            <label>Adjunte imagen</label>
            <input   type="file" name="file"  required data-toggle="tooltip"  title="Imagen publicación" />
@@ -41,7 +52,6 @@ $('[data-toggle="tooltip"]').tooltip();
                 </select>
              
 
-             <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
             
 
 
