@@ -173,7 +173,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           href="DASHBOARD.php?p=<?php echo base64_encode('gestion_productos')?>" >
+                          <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_productos')?>" >
  <i class="fa fa-object-group fa-5x"></i>
                       <h4>Productos</h4>
                       </a>

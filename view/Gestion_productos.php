@@ -76,6 +76,7 @@
 
                     <td><a href="#" onclick="openmodal('actualizar_producto','<?php echo $row['id_producto'] ?>')"><i class="fa fa-pencil" style="color:black !important"></i></a>
                     <a href="#" onclick="openmodal('actualizar_foto_producto','<?php echo $row['id_producto'] ?>')" ><i class='fa fa-pencil-square-o' aria-hidden='true' style='color:gray !important' ></i></a>
+                    
                       <a href='../controller/productos.controller.php?ui=".base64_encode($row["id_producto"])."&acc=d'><i class='fa fa-ban' style='color:red !important' aria-hidden='true'></i></a></td>
                   </tr>
                 

@@ -65,11 +65,12 @@
        
        echo "<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='comprarproducto.php'>
+            <div class='hover-bg'>"?> <a href='#' onclick="openmodal('detalle_producto','<?php echo $row["id_producto"] ?>')">
+            <?php Echo "
               <div class='hover-text'>
                 <h4>".$row["nombre"]."</h4>
                 <p> Valor:$".$row["valor_venta"]."</p>
-                p>Descuento:".$row["descuento"]."%</p>
+                <p>Descuento:".$row["descuento"]."%</p>
               </div>
               <img src='".$row["url_foto1"]."' class='img-responsive' alt='Project Title'> </a> </div>
           </div>

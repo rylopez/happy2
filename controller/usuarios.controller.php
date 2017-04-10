@@ -99,6 +99,7 @@
 			$id_rol			=$_POST["id_rol"];
 			$autor			=$_POST["autor"];
 			$id_usuario     =$_POST["id_usuario"];
+			$location       =$_POST["location"];
 			try {
 				Gestion_usuarios::update($tipo_documento,$numero_documento,$clave,$nombre,$apellido,$telefono,$direccion,$ciudad,$correo,$celular,$edad,$sexo,$estado,$id_rol,$autor,$id_usuario);
 				$msn= base64_encode("se ha actualizado correctamente :D");
@@ -109,7 +110,7 @@
 				$tipom=base64_encode("warning");
 			}
 		if ($location=="index"){
-				header("location: ../view/index.php?p=".base64_encode("nuevo_usuario")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
+				header("location: ../view/index.php?p=".base64_encode("")."&m=".$msn."&tm=".$tipom);}elseif ($location=="dashboard") {
 				header("location: ../view/dashboard.php?m=".$msn."&tm=".$tipom);
 				}else{
 					header("location: ../view/dashboard.php?p=".base64_encode("gestion_usuarios")."&m=".$msn."&tm=".$tipom);
@@ -165,7 +166,7 @@
 						      $_SESSION["id_usuario"]     = $usuario[0];
 						      $_SESSION["nombre"]         = $usuario[1];
 						      $_SESSION["apellido"]       = $usuario[2];
-						      $_SESSION["id_rol"]         = $usuario[14];
+						      $_SESSION["id_rol"]         = $usuario[13];
 						      $msn=base64_encode("Bienvenido ".$usuario[1]." ".$usuario[2]);
 						      $tipo_msn=base64_encode("success");		     
 						    

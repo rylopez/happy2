@@ -41,7 +41,16 @@
             $("#talla").html(data);
             });            
         });
-   })
+   });
+   $("#filtroproducto").change(function () {
+           $("#filtroproducto option:selected").each(function () {
+            elegido=$(this).val();
+            $.post("filtroproducto.php", { elegido: elegido }, function(data){
+            $("#productos").html(data);
+            });            
+        });
+   });
+
   
    <?php
 

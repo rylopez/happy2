@@ -10,7 +10,7 @@ echo $ui;
 
  
   $usuario = Gestion_Usuarios::ReadbyId($ui);
-
+  echo $_SESSION["id_rol"];
 ?>
 <div  class="modal-dialog modal-lg" width="410" >  
 
@@ -20,6 +20,7 @@ echo $ui;
  
   <form   action="../controller/usuarios.controller.php" method="POST">
         <h3 >Actualizar Usuario</h3>
+
        
         
           <select name="tipo_documento"  required data-toggle="tooltip"  title="Tipo de documento" >
@@ -71,14 +72,8 @@ echo $ui;
             <option value="otro" <?php if($usuario[12] == "otro"){ echo "selected"; } ?>>otro</option>
           </select>
             
-        <?php
-
-
+        <?php   
     
-        if(!isset($_SESSION["id_usuario"])){ ?>
-        <input name="id_rol" value="<?php echo $usuario[13] ?>"  type="hidden" />
-        <input name="location"  value="index" type="hidden"/>
-        <?php    }else{ 
           if ($_SESSION["id_rol"]==1) {?>
         
                 <select    name="id_rol" placeholder="Rol Usuario" required data-toggle="tooltip"  title="Rol Usuario">
@@ -89,47 +84,44 @@ echo $ui;
                     <option value="4" <?php if($usuario[13] == "4"){ echo "selected"; } ?>>Experto</option>                     
                 </select>
                 <input name="location"  value="dashboardadmin" type="hidden"/>
-        <?php }else{  ?>
-           
-                <select    name="id_rol" required data-toggle="tooltip"  title="Rol Usuario">
-                    <option value="" disabled selected>Seleccione el Rol</option>
-                    <option value="2" <?php if($usuario[13] == "2"){ echo "selected"; } ?>>Empleado</option>
-                    <option value="3" <?php if($usuario[13] == "3"){ echo "selected"; } ?>>Cliente</option>                    
-                </select>
-             <input name="location"  value="dashboard" type="hidden"/>
-      <?php } } ?>
-      
-      
-      
-      <input type="hidden" name="estado" value="1">
-      <input type="hidden" name="id_usuario" value="<?php echo $usuario[0] ?>" >
-      <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
-
-      <br>
-
-      <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
-            <?php
-
-      if(!isset($_SESSION["id_usuario"])){
+                <input type="hidden" name="estado" value="1">
+                <input type="hidden" name="id_usuario" value="<?php echo $usuario[0] ?>" >
+                <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
+               <br>
+               <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
+               <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
+        <?php }elseif (($_SESSION["id_rol"]==2)|| ($_SESSION["id_rol"]==4)){  ?>
+               <select    name="id_rol" placeholder="Rol Usuario" required data-toggle="tooltip"  title="Rol Usuario">
+                    <option value="x" disabled selected>Seleccione el Rol</option>
                  
-      ?>
-      <a  class=" btn cancelar" href="index.php">Cancelar</a>  
-      <?php 
-       }else {
-         if ($_SESSION["id_rol"]==1 ) {  
-      ?>
-      
-      <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode("gestion_usuarios"); ?>">Cancelar</a>
-      <?php 
-       }else{?>
-       <a  class=" btn cancelar" href="dashboard.php">Cancelar</a>
-     <?php  }}
-      ?>
-            
-
-     
-
-          
+                    <option value="2" <?php if($usuario[13] == "2"){ echo "selected"; } ?>>Empleado</option>
+                    <option value="3" <?php if($usuario[13] == "3"){ echo "selected"; } ?>>Cliente</option>
+                    <option value="4" <?php if($usuario[13] == "4"){ echo "selected"; } ?>>Experto</option>                     
+                </select>
+                <input name="location"  value="dashboard" type="hidden"/>
+                <input type="hidden" name="estado" value="1">
+                <input type="hidden" name="id_usuario" value="<?php echo $usuario[0] ?>" >
+                <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
+               <br>
+               <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
+               <a  class=" btn cancelar" href="dashboard.php?p=<?php echo base64_encode(""); ?>">Cancelar</a>
+              <?php }else{  ?>
+               <select    name="id_rol" placeholder="Rol Usuario" required data-toggle="tooltip"  title="Rol Usuario">
+                    <option value="x" disabled selected>Seleccione el Rol</option>
+                 
+                  
+                    <option value="3" <?php if($usuario[13] == "3"){ echo "selected"; } ?>>Cliente</option>
+                                      
+                </select>
+                <input name="location"  value="index" type="hidden"/>
+                <input type="hidden" name="estado" value="1">
+                <input type="hidden" name="id_usuario" value="<?php echo $usuario[0] ?>" >
+                <input type="hidden" name="autor" value="<?php echo ($_SESSION["nombre"])." ".($_SESSION["apellido"]); ?>">
+               <br>
+               <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
+               <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode(""); ?>">Cancelar</a>
+ 
+          <?php } ?>
   </form>
   </div>
  

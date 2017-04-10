@@ -1,3 +1,4 @@
+
 <?php 
  require_once("../model/db_conn.php");
 require_once("../model/imagenes.class.php");
@@ -6,15 +7,37 @@ require_once("../model/productos.class.php");
  $id=1;
   $img=Gestion_imagenes::ReadbyId($id);
 ?>
-<div class="bg">
-   <div style="margin-left: 15%">
+<div class="bg"> 
+   <div style="margin-left: 15%; margin-top:10% ">
+
+
         <i style="font-family:'lacite';font-size: 4em; color: white;">"<?php echo $img["frase_productos"]; ?>"</i>
         <br>
         <i style="font-family:'lacite';font-size: 2em; color: white;">-<?php echo $img["autor_productos"]; ?></i>
-        <br>
+        
+
     </div>
+    <hr>
+    <div style="margin-left: 15%">
+      <form accept-charset="utf-8" method="POST" action="viewproductos.php">
+        <div class="col-xs-4"> 
+         <select name="select" class="form-control" data-toggle="tooltip"  title="Filtrar" id="filtroproducto" required >
+            <option value="x" disabled selected>Seleccione Filtro</option>
+             <option value="salud sexual">Salud Sexual</option>
+             <option value="lenceria">Lenceria</option>
+             <option value="Juguetes">Juguetes Sexuales</option>
+             <option value="estimulantes">Estimulantes</option>
+              <option value="Hombre">Hombre</option>
+               <option value="Mujer">Mujer</option>
+          </select>
+          </div>
+      <div class="col-xs-4">    
+      <input  class="form-control"  type="text" name="busqueda" id="busqueda" value="" data-toggle="tooltip"  title="buscar" placeholder="Buscar" required maxlength="30" autocomplete="off" onKeyup="buscar();" />
+      </div>
+       </form>
+    </div>
+    
 </div>
-<hr>
 
 
 
@@ -35,9 +58,13 @@ require_once("../model/productos.class.php");
   padding-bottom: 100px;
 }
 </style>
+<div class="container">
+<div id="productos"></div>
+</div>
+
 <div id="works">
   <div class="container"> <!-- Container -->
-    <div class="section-title text-center center">
+    <div class="section-title text-center center" style="margin-top:-100px !important;">
       <h2>PRODUCTOS</h2>
       <hr>
       <div class="clearfix"></div>
@@ -49,7 +76,8 @@ require_once("../model/productos.class.php");
     </div>
     
     <div class="row" style="margin-top:2%">
-      <div class="portfolio-items">
+      <div  class="portfolio-items">
+
        <?php
 
 
@@ -85,3 +113,20 @@ require_once("../model/productos.class.php");
   </div>
 </div>
 
+<script>
+$(document).ready(function() {
+    $("#resultadoBusqueda").html('<p>JQUERY VACIO</p>');
+});
+
+function buscar() {
+    var textoBusqueda = $("input#busqueda").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("filtroproducto.php", {elegido: textoBusqueda}, function(mensaje) {
+            $("#productos").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoBusqueda").html('<p>JQUERY VACIO</p>');
+        };
+};
+</script>

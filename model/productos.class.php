@@ -54,6 +54,54 @@ class Gestion_Productos{
 
         happy_BD::Disconnect();
     }
+     function Readbytipo($id_tipoproducto)
+    {
+        //instacioamos y nos conectamos a la  base de  datos
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        //crear  el  query  que vamos a realizar.
+        $consulta= "SELECT * FROM producto WHERE id_tipoproducto=? ";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($id_tipoproducto));
+        
+        $resultado=$query->fetchALL(PDO::FETCH_BOTH);
+        return $resultado;
+
+        happy_BD::Disconnect();
+    }
+    function Readbysexo($sexo)
+    {
+        //instacioamos y nos conectamos a la  base de  datos
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        //crear  el  query  que vamos a realizar.
+        $consulta= "SELECT * FROM producto WHERE sexo=? ";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($sexo));
+        
+        $resultado=$query->fetchALL(PDO::FETCH_BOTH);
+        return $resultado;
+
+        happy_BD::Disconnect();
+    }
+    function Readbylike($like)
+    {
+        //instacioamos y nos conectamos a la  base de  datos
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        //crear  el  query  que vamos a realizar.
+        $consulta= "SELECT * FROM producto WHERE sexo like ? OR nombre like ?  OR referencia like ?  ";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($like,$like,$like));
+        
+        $resultado=$query->fetchALL(PDO::FETCH_BOTH);
+        return $resultado;
+
+        happy_BD::Disconnect();
+    }
 
 
 
@@ -123,6 +171,7 @@ class Gestion_Productos{
 
         happy_BD::Disconnect();
     }
+
      function readrand()
     {
         //instacioamos y nos conectamos a la  base de  datos

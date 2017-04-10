@@ -40,7 +40,7 @@
 
              
 
-            <select    name="id_tipoproducto" id="tipoproducto" required data-toggle="tooltip"  title="Tipo de Producto" onchange="javascript:miprueba(this.value)" ></script> >
+            <select    name="id_tipoproducto" id="tipoproducto" required data-toggle="tooltip"  title="Tipo de Producto"  ></script> >
                     <option value="" disabled selected>Seleccione tipo producto</option>
                     <option value="1">Salud Sexual</option>
                     <option value="2" >Lenceria</option>
