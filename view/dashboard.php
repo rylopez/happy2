@@ -4,8 +4,13 @@
 //cambio casa 
 
   session_start();
+
+      if(!isset($_SESSION["id_usuario"])){ 
+        $msn=base64_encode(":( debe iniciar Sesión");
+        $tipom=base64_encode("warning"); 
+         header("location: ../view/index.php?m=".$msn."&tm=".$tipom);   }else{ ?>
  
- ?>
+ 
 <!DOCTYPE html>
 <html lang="Es">
 <head>
@@ -156,3 +161,4 @@
         </div> -->
 </body>
 </html>
+<?php }  ?>

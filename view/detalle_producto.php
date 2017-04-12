@@ -41,7 +41,7 @@
         <img src="<?php echo $producto["url_foto1"] ;?>" >
         <div class="carousel-caption" style="margin-left:0% !important;" >
           <h4><?php echo $producto["nombre"];?></h4>
-          <a  href="index.php?p=<?php echo base64_encode("comprar")?>&ui=<?php echo base64_encode($producto["id_producto"]) ?>" class="btn guardar"><h4>Comprar</h4></a>
+          <?php echo" <a href='../controller/comprar.php?ui=".base64_encode($producto['id_producto'])."' class= 'btn guardar'><h4>Comprar</h4></a>" ?>
            <a  href="index.php?p=<?php echo base64_encode("viewproducto")?>" class="btn cancelar"><h4>Cancelar</h4></a>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <img src="<?php echo $producto["url_foto2"] ;?>" >
         <div class="carousel-caption">
           <h4><?php echo $producto["nombre"];?></h4>
-          <a  href="index.php?p=<?php echo base64_encode("comprar")?>&ui=<?php echo base64_encode($producto["id_producto"]) ?>" class="btn guardar"><h4>Comprar</h4></a>
+         <?php echo" <a href='../controller/comprar.php?ui=".base64_encode($producto['id_producto'])."' class= 'btn guardar'><h4>Comprar</h4></a>" ?>
            <a  href="index.php?p=<?php echo base64_encode("viewproducto")?>" class="btn cancelar"><h4>Cancelar</h4></a>
         </div>
       </div>
@@ -59,7 +59,7 @@
         <img src="<?php echo $producto["url_foto3"] ;?>" >
         <div class="carousel-caption">
           <h4><?php echo $producto["nombre"];?></h4>
-          <a  href="index.php?p=<?php echo base64_encode("comprar")?>&ui=<?php echo base64_encode($producto["id_producto"]) ?>" class="btn guardar"><h4>Comprar</h4></a>
+          <?php echo" <a href='../controller/comprar.php?ui=".base64_encode($producto['id_producto'])."' class= 'btn guardar'><h4>Comprar</h4></a>" ?>
            <a  href="index.php?p=<?php echo base64_encode("viewproducto")?>" class="btn cancelar"><h4>Cancelar</h4></a>
         </div>
       </div>

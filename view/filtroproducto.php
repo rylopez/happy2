@@ -18,7 +18,7 @@ if ($_POST["elegido"]=="salud sexual") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot;>
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -52,7 +52,7 @@ elseif ($_POST["elegido"]=="lenceria") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot; >
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -84,7 +84,7 @@ elseif ($_POST["elegido"]=="Juguetes") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot; >
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -115,7 +115,7 @@ elseif ($_POST["elegido"]=="estimulantes") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot;>
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -146,7 +146,7 @@ elseif ($_POST["elegido"]=="Hombre") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot;>
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -176,7 +176,7 @@ elseif ($_POST["elegido"]=="Mujer") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot; >
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>
@@ -209,7 +209,7 @@ elseif ($_POST["elegido"]=="Mujer") {
        
        print_r("<div class='col-xs-8 col-sm-6 col-md-4 col-lg-4' style='margin-top:2%;'>
           <div class='portfolio-item'>
-            <div class='hover-bg'> <a href='index.php?p=". base64_encode('comprar')."&ui=".base64_encode($row['id_producto'])."'>
+            <div class='hover-bg'> <a href='#' onclick=openmodal('detalle_producto','".$row['id_producto']."') &quot;>
               <div class='hover-text'>
                 <h4>".$row['nombre']."</h4>
                 <p>Costo: $".$row['valor_venta']."</p>

@@ -74,7 +74,7 @@
               </div>
               <img src='".$prod['url_foto1']."' class='img-responsive' alt='Project Title'> </a> </div>
           </div>
-          <a href='index.php?p=".base64_encode('comprar')."&ui=".base64_encode($prod['id_producto'])."' class= 'btn guardar'><h4>Comprar</h4></a>
+          <a href='../controller/comprar.php?ui=".base64_encode($prod['id_producto'])."' class= 'btn guardar'><h4>Comprar</h4></a>
           <a  href='#' onclick=openmodal('detalle_producto','".$prod['id_producto']."') &quot;  class='btn cancelar'><h4>Ver Detalle</h4></a>
           
  

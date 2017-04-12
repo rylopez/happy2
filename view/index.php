@@ -185,6 +185,13 @@ function scaleBannerVideoSize(element){
     </ul>
       <?php } ?>
      </li>
+    <li><?php 
+      if(!isset($_SESSION["id_pedido"])){  
+            }else{ ?>
+            <a style="font-size:2em;color: white;" href="index.php?p=<?php echo base64_encode("detallecomprar")?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+
+            <?php } ?>
+    </li>
           
   </ul> 
  
