@@ -11,7 +11,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
 <li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_productos')?>"><h3><i class="fa fa-object-group fa-2x" aria-hidden="true"></i> Productos</h3></a></li>
 
 <li><a   href="dashboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>"><h3 ><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i> Publicaciones</h3></a></li>
-<li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>"><h3 > <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Pedidos</h3></a></li>
+<li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_pedidos')?>"><h3 > <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Pedidos</h3></a></li>
 <?php }
 elseif ($_SESSION["id_rol"]==2) {//menu empleado
 	?>
@@ -20,7 +20,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
  <li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_productos')?>"><h3><i class="fa fa-object-group fa-2x" aria-hidden="true"></i> Productos</h3></a></li>
 
 <li><a   href="dashboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>"><h3 ><i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i> Publicaciones</h3></a></li>
-<li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>"><h3 > <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Pedidos</h3></a></li>
+<li><a  href="dashboard.php?p=<?php echo base64_encode('gestion_pedidos')?>"><h3 > <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Pedidos</h3></a></li>
 </li>
 
 

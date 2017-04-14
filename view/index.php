@@ -140,12 +140,12 @@ function scaleBannerVideoSize(element){
 
     });
 }
- function openmodal(pagina,id){
+ function openmodal(pagina,numero){
           $("#myModal").modal('show');
-          $.post("abrirmodal.php",{pag:pagina,uid:id},function(data){
+          $.post("abrirmodal.php",{pag:pagina,uid:numero},function(data){
             $("#myModal").html(data);
           });
-        }
+        };
 
 
 

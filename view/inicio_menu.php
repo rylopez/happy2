@@ -59,7 +59,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="DASHBOARD.php?p=<?php echo base64_encode('nuevo_producto')?>" >
+                           <a href="dasboard.php?p=<?php echo base64_encode('gestion_pedidos')?>" >
  <i class="fa fa-shopping-cart fa-5x"></i>
                       <h4>Pedidos </h4>
                       </a>
@@ -69,7 +69,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="dashboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>">
  <i class="fa fa-newspaper-o fa-5x"></i>
                       <h4>Publicaciones</h4>
                       </a>
@@ -79,7 +79,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="dashboard.php?p=<?php echo base64_encode('gestion_productos')?>">
  <i class="fa fa-object-group fa-5x"></i>
                       <h4>Productos</h4>
                       </a>
@@ -89,7 +89,7 @@ if($_SESSION["id_rol"]==1){//Menu Administrador
                   </div>
               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="dashboard.php?p=<?php echo base64_encode('gestion_usuarios')?>">
  <i class="fa fa-users fa-5x"></i>
                       <h4>Usuarios</h4>
                       </a>
@@ -153,7 +153,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="dasboard.php?p=<?php echo base64_encode('gestion_pedidos')?>" >
  <i class="fa fa-shopping-cart fa-5x"></i>
                       <h4>Pedidos </h4>
                       </a>
@@ -163,7 +163,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
+                           <a href="dasboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
  <i class="fa fa-newspaper-o fa-5x"></i>
                       <h4>Publicaciones</h4>
                       </a>
@@ -173,7 +173,7 @@ elseif ($_SESSION["id_rol"]==2) {//menu empleado
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                          <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_productos')?>" >
+                          <a href="dasboard.php?p=<?php echo base64_encode('gestion_productos')?>" >
  <i class="fa fa-object-group fa-5x"></i>
                       <h4>Productos</h4>
                       </a>
@@ -232,7 +232,7 @@ elseif ($_SESSION["id_rol"]==4) {//menu experto
                   
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="DASHBOARD.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
+                           <a href="dasboard.php?p=<?php echo base64_encode('gestion_publicaciones')?>" >
  <i class="fa fa-newspaper-o fa-5x"></i>
                       <h4>Publicaciones</h4>
                       </a>

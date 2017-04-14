@@ -3,7 +3,7 @@ session_start();
 
 
  $p=$_POST["pag"];
- $ui =  $_POST["uid"];
+ $ui =$_REQUEST["uid"];
  
 
 switch ($p) {
@@ -84,6 +84,10 @@ case  'gestion_views':
 	case  'detalle_publicacion':
 
 	 require_once("detalle_publicacion.php");
+	break;
+	case  'ver_pedido':
+
+	 require_once("ver_pedido.php");
 	break;
 
 }

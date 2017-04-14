@@ -1,25 +1,24 @@
 <?php
 session_start();
 		
-		//1. llamar  la conexion de la base de datos
+		
 		require_once("../model/db_conn.php");
-		//2. llamar las  clases necesarias o que se requieran
+		
 		require_once("../model/pedidos.class.php");
-		//3. instanciamos las variables globales y una llamada  $accion
-		// la variable accion nos va  a indicar  que parte cel crud vamos a crear.
+	    require_once("../model/productos.class.php");
+		
 		$accion=$_REQUEST["acc"];
 		switch ($accion) {
 	    case 'd':
 	    $id_pedido=$_SESSION["id_pedido"];
 	    $id_producto=base64_decode($_REQUEST["ui"]);
-	    $id_usuario=$_SESSION["id_usuario"];
-	    $pedido=Gestion_Pedidos::validaidpedido($id_usuario);
-	    $total_temp=base64_decode($_REQUEST["total"]);
-	    $total=$pedido["total"]-$total_temp ;
+	    
+	    
 	   
 	    try {   
-	    	    Gestion_Pedidos::updatetotal($total,$id_pedido);
 				Gestion_Pedidos::deletedetalle($id_pedido,$id_producto);
+				$total=Gestion_Pedidos::totaldetallepedido($id_pedido);
+	    	    Gestion_Pedidos::updatetotal($total["total"],$id_pedido);
 				$tipomsn = base64_encode("success"); 
 				$msn= base64_encode("Se ha retirado correctamente la REFERENCIA,de su lista de pedidos");	
 						
@@ -30,5 +29,56 @@ session_start();
 
 
 	    break;
+	    case 'c':
+	    $id_pedido=$_POST["id_pedido"];
+	    $prod=Gestion_Pedidos::ReadDetalle($id_pedido);
+       
+        foreach ($prod as $ro ) {
+        	$cantidad=$ro["cantidad"];
+        	$id_producto=$ro["id_producto"];
+        	$cant_producto=Gestion_Productos::Readbyid($id_producto);
+
+            if ($cant_producto["cantidad"]<$cantidad){
+            	$tipomsn = base64_encode("warning"); 
+				$msn= base64_encode("Solo disponemos de ".$cant_producto["cantidad"]." unidades del producto ".$ro["referencia"]." ".$ro["nombre"].".");
+
+				header("location: ../view/index.php?p=".base64_encode('detallecomprar')."&m=".$msn."&tm=".$tipomsn);
+				return FALSE; 
+				
+
+            
+        }
+    }
+        foreach ($prod as $row ) {
+        	$cantidad=$row["cantidad"];
+        	$id_producto=$row["id_producto"];
+        	$cant_producto=Gestion_Productos::Readbyid($id_producto);
+        	$cantidad=$cant_producto["cantidad"]-$cantidad;
+        	try {   
+				Gestion_Productos::Updatecantidad($cantidad,$id_producto);
+				
+		 } catch (Exception $e) {
+				 $m=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+			         }
+
+           
+        }
+
+	    try {   
+	    	    $estado=2;
+				Gestion_Pedidos::Updateestado($estado,$id_pedido);				
+				$tipomsn = base64_encode("success"); 
+				$msn= base64_encode("Gracias Por su compra, Muy pronto estaremos enviando su Pedido hasta la dirreccion registrada");	
+						
+		 } catch (Exception $e) {
+				 $m=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+			         }
+			   unset($_SESSION['id_pedido']);
+			    header("location: ../view/index.php?p=".base64_encode('viewproducto')."&m=".$msn."&tm=".$tipomsn);
+
+
+	    break;
+
+
 }
 ?>

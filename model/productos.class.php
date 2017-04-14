@@ -128,6 +128,16 @@ class Gestion_Productos{
 
         happy_BD::Disconnect();
     }
+    function Updatecantidad($cantidad,$id_producto){
+        $conexion=happy_BD::Connect();
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+        $consulta= "UPDATE producto SET cantidad=? WHERE id_producto=?";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($cantidad,$id_producto));
+
+        happy_BD::Disconnect();
+    }
   function updatefoto($url_foto1,$url_foto2,$url_foto3,$autor,$id_producto){
         $conexion=happy_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

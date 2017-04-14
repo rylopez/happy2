@@ -72,6 +72,10 @@ case  'gestion_views':
 
 	 require_once("Gestion_views.php");
 	break;
+case  'gestion_pedidos':
+
+	 require_once("Gestion_pedidos.php");
+	break;
 
 }
 ?>

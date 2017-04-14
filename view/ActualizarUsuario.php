@@ -4,13 +4,13 @@ $('[data-toggle="tooltip"]').tooltip();
 </script>
 <?php
   
-echo $ui;
+
   require_once("../model/db_conn.php");
   require_once("../model/usuarios.class.php");
 
  
   $usuario = Gestion_Usuarios::ReadbyId($ui);
-  echo $_SESSION["id_rol"];
+ 
 ?>
 <div  class="modal-dialog modal-lg" width="410" >  
 
