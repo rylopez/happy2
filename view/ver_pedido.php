@@ -115,19 +115,61 @@ $usu= Gestion_Pedidos::Readbypedido($ui);
   
   <form action="../controller/pedidos.controller.php" method="POST">
   <div class="form-style-6">
- 
-  <select name="medio_pago"  required data-toggle="tooltip" title="Medio de Pago" >
-            <option value="x" disabled selected>Seleccione Medio Pago</option>
-            <option value="" disabled>Pagos PSE</option>
-            <option value="" disabled >Efecty</option>
-            <option value="contraentrega">Contra Entrega</option>
+ <?php if ($usu["estado"]==1){  ?>
+  <select name="estado"  required data-toggle="tooltip" title="Estado" >
+            <option value="x" disabled>Seleccione Estado</option>
+            <option value="1" selected>Sin Confirmar</option>
+            <option value="2" disabled >Confirmado</option>
+            <option value="3" disabled >En Trasporte</option>
+            <option value="4" disabled >Entregado</option>
+            <option value="5">Cancelado</option>
+    </select>
+ <?php }elseif ($usu["estado"]==2){  ?>
+ <select name="estado"  required data-toggle="tooltip" title="Estado" >
+            <option value="x" disabled>Seleccione Estado</option>
+            <option value="1" disabled>Sin Confirmar</option>
+            <option value="2" selected>Confirmado</option>
+            <option value="3" >En Trasporte</option>
+            <option value="4" disabled >Entregado</option>
+            <option value="5">Cancelado</option>
+    </select>
+ <?php }elseif ($usu["estado"]==3){  ?>
+ <select name="estado"  required data-toggle="tooltip" title="Estado" >
+            <option value="x" disabled>Seleccione Estado</option>
+            <option value="1" disabled>Sin Confirmar</option>
+            <option value="2" disabled>Confirmado</option>
+            <option value="3" selected>En Trasporte</option>
+            <option value="4" >Entregado</option>
+            <option value="5">Cancelado</option>
+    </select>
+ <?php }elseif ($usu["estado"]==4){  ?>
+ <select name="estado"  required data-toggle="tooltip" title="Estado" >
+            <option value="x" disabled>Seleccione Estado</option>
+            <option value="1" disabled>Sin Confirmar</option>
+            <option value="2" disabled>Confirmado</option>
+            <option value="3" disabled>En Trasporte</option>
+            <option value="4" selected >Entregado</option>
+            <option value="5" disabled>Cancelado</option>
     </select>
 
-    <input name="id_pedido"  value="<?php echo $_SESSION["id_pedido"] ?>" type="hidden"/>
- 
+ <?php }elseif ($usu["estado"]==5){  ?>
+
+
+  <input class="form-control input-lg" type="text"   readonly="readonly" value="<?php echo $usu["estado"] ?>" />
+   <?php } ?>
   
   </div>
-    <button class="guardar"   type="botton" name="acc" value="u">Guardar</button>
+
+    <input name="id_pedido"  value="<?php echo $usu["id_pedido"] ?>" type="hidden"/>
+
+    <input name="correo"  value="<?php echo $usu["correo"] ?>" type="hidden"/>
+
+    <input name="nombre"  value="<?php echo $usu["nombre"] ?>" type="hidden"/>
+    <input name="apellido"  value="<?php echo $usu["apellido"] ?>" type="hidden"/>
+    <input name="direccion"  value="<?php echo $usu["direccion"] ?>" type="hidden"/>
+    <input name="direccion"  value="<?php echo $usu["direccion"] ?>" type="hidden"/>
+
+    <button class="guardar"   type="botton" name="acc" value="ue">Guardar</button>
                <a  class=" btn cancelar" href="index.php?p=<?php echo base64_encode(""); ?>">Cancelar</a>
  
   </form >

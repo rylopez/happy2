@@ -78,6 +78,42 @@ session_start();
 
 
 	    break;
+	    case 'ue':
+	    $estado=$_POST["estado"];
+	    $id_pedido=$_POST["id_pedido"];
+	    $correo=$_POST["correo"];
+	    $nombre=$_POST["nombre"];
+	    $apellido=$_POST["apellido"];
+	    $dirreccion=$_POST["dirreccion"];
+	    $ciudad=$_POST["ciudad"];
+
+	    if($estado==3){
+	    	
+            $titulo    = 'CONFIRMACION ENVIO PEDIDO -HAPPY- sex AND live';
+           $mensaje   = 'Hola '.$nombre.' '.$apellido.'.\r\n Por medio de este mensaje le confirmamos \r\n que su pedido  será entregado en los proximos días.\r\n  En la dirección:'.$dirreccion.'\r\n En la ciudad:'.$ciudad.'. \r\n ¡GRACIAS POR SU COMPRA!.';
+ 
+
+           $bool=mail($correo, $titulo, $mensaje);
+             if($bool){
+        echo "Mensaje enviado";
+         }else{
+       echo "Mensaje no enviado";
+}
+
+	    }
+         try {   
+	    	   
+				Gestion_Pedidos::Updateestado($estado,$id_pedido);				
+				$tipomsn = base64_encode("success"); 
+				$msn= base64_encode("Se ha modificado Pedido correctamente");	
+						
+		 } catch (Exception $e) {
+				 $m=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+			         }
+			   unset($_SESSION['id_pedido']);
+			    header("location: ../view/dashboard.php?p=".base64_encode('gestion_pedidos')."&m=".$msn."&tm=".$tipomsn);
+
+	    break;
 
 
 }

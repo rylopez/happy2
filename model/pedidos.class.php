@@ -221,7 +221,7 @@ FROM detalle_pedido INNER JOIN producto ON detalle_pedido.id_producto=producto.i
 		$conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 		//crear  el  query  que vamos a realizar.
-		$consulta= "SELECT pedido.id_pedido,pedido.fecha_pedido, usuario.nombre,usuario.apellido,pedido.estado,pedido.total,pedido.forma_pago, usuario.direccion,usuario.telefono,usuario.celular,usuario.direccion,usuario.ciudad,usuario.id_usuario,usuario.numero_documento FROM pedido INNER JOIN usuario ON pedido.id_usuario=usuario.id_usuario WHERE id_pedido=? ";
+		$consulta= "SELECT pedido.id_pedido,pedido.fecha_pedido, usuario.nombre,usuario.apellido,pedido.estado,pedido.total,pedido.forma_pago, usuario.direccion,usuario.telefono,usuario.celular,usuario.direccion,usuario.ciudad,usuario.id_usuario,usuario.numero_documento,usuario.correo FROM pedido INNER JOIN usuario ON pedido.id_usuario=usuario.id_usuario WHERE id_pedido=? ";
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($id_pedido));
 		
