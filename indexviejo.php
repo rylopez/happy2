@@ -18,18 +18,11 @@
   <link rel="stylesheet" href="recursos/plugins/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="recursos/plugins/bootstrap/css/bootstrap.min.css">
   
-
   <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-
-
-
-  
 
   <script src="recursos/plugins/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" charset="utf8" src="recursos/plugins/datatable/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="recursos/plugins/sweetalert/dist/sweetalert.min.js"></script>
-
-
 
  <script type="text/javascript">
     $(document).ready( function () {
@@ -75,7 +68,15 @@
                   }
       ?>
      $('[data-toggle="tooltip"]').tooltip(); 
- 
+      $('#nav-icon').click(function(){
+    $(this).toggleClass('animate-icon');
+    $('#overlay').fadeToggle();
+     });
+       $('#overlay').click(function(){
+       $('#nav-icon').removeClass('animate-icon');
+        $('#overlay').toggle();
+       });
+
     scaleVideoContainer();
 
     initBannerVideoSize('.video-container .poster img');
@@ -146,74 +147,30 @@ function scaleBannerVideoSize(element){
           });
         };
 
-$( document ).ready(function() {
-    
-  $('.menu').click(function() {
 
-    $('.overlay').removeClass( "flipOutX hide" );
-    $('.overlay').addClass( "animated flipInX show" );
-
-
-    $('#close').click(function() {
-
-      $('.overlay').removeClass( "flipInX show" );
-      $('.overlay').addClass( "animated hide flipOutX " );
-
-    });
-
-  });
-
-});
 
 
  </script>
-
-
-
+  
 </head>
-<body >
-
-
-<div class="overlay">
-  <div>
-
-    <ul style="list-style:none; font-family:'Helvetica';text-transform: uppercase; ">
-      <li><a href="index.php?p=<?php echo base64_encode('')?>">
-      Inicio</a></li>
-      <li><a href="index.php?p=<?php echo base64_encode('viewproductos')?>">Productos </a></li>
-      <li><a href="index.php?p=<?php echo base64_encode('viewpublicaciones')?>">Publicaciones</a></li>
-      <li><a href="index.php#about">Sobre nosotros</a></li>
-      
-         <?php
-            if(!isset($_SESSION["id_usuario"])){  ?>
-            <li><a href="#" onclick="openmodal('logueo','0')"> Iniciar Sesión</a></li>
-       <?php }else{
-          ?>
-          <li><a href="cerrarsesion.php"> Cerrar Sesión</a></li>
-      <?php  } ?>
-    </ul>
- 
-  </div>
-
-  <div class="close" id="close">X</div>
-
-</div>
-
-
-
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top"  style="background: black; z-index: 4;">
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top"  style="background: black">
   
   
   
 <div id="nav" class="container">
                    
   <ul class="nav nav-tabs " role="tablist">
-    <li> 
+    <li><div id="nav-icon">
+
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>
 </li>
-    <li><a href="#" class='menu' id='version-one' style="font-size: 3em; color: white;" ><i class="fa fa-bars" aria-hidden="true"></i>
-</a></li>
+    <li><a class="cd-nav-trigger cd-text-replace" href="#primary-nav" id="toggle">
+          <span aria-hidden="true" class="cd-icon"></span></a></li>
     <li><a href="#"><img src="recursos/logos/logo.png" style="width:60px;"></a></li>
     <li class="dropdown">
       <?php
@@ -241,9 +198,27 @@ $( document ).ready(function() {
 </div>
 </nav>
 
-<div >
+<div id="overlay">
 
-  
+  <div>
+
+    <ul style="list-style:none; font-family:'Helvetica';text-transform: uppercase; ">
+      <li><a href="index.php?p=<?php echo base64_encode('')?>">
+      Inicio</a></li>
+      <li><a href="#">Para Ellas</a></li>
+      <li><a href="#">Para Ellos</a></li>
+      <li><a href="#">Sexo Inteligente</a></li>
+      <li><a href="#">Para Ellos</a></li>
+         <?php
+            if(!isset($_SESSION["id_usuario"])){  ?>
+            <li><a href="#" onclick="openmodal('logueo','0')"> Iniciar Sesión</a></li>
+       <?php }else{
+          ?>
+          <li><a href="cerrarsesion.php"> Cerrar Sesión</a></li>
+      <?php  } ?>
+    </ul>
+ 
+  </div>
 
 </div>
 
@@ -331,17 +306,3 @@ $( document ).ready(function() {
 
 </body>
 </html>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
