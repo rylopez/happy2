@@ -223,6 +223,7 @@ $( document ).ready(function() {
     <a   data-toggle="dropdown" id="nomusu" > <?php echo "".($_SESSION["nombre"])." ".($_SESSION["apellido"]);?><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     <ul class="dropdown-menu dropdown-menu-right">
       <li><a href="#"onclick="openmodal('actualizar_usuario','<?php echo $_SESSION["id_usuario"]; ?>')" >Actualizar mi perfil</a></li>
+       <li><a href="index.php?p=<?php echo base64_encode("historialpedido")?>" >Ver historial de Pedidos</a></li>
       <li class="divider"></li>
       <li><a href="cerrarsesion.php">Cerrar Sesión</a></li>      
     </ul>
@@ -288,23 +289,23 @@ $( document ).ready(function() {
     </div>
     <div class="col-md-8 col-md-offset-2">
       <h3>Escribenos un mensaje</h3>
-      <form name="sentMessage" id="contactForm" novalidate  >
+      <form  id="contactForm" novalidate   name="form"  action="../controller/contactanos.controller.php"  method="POST">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
+              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required" name="nombre">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required" name="correo" >
               <p class="help-block text-danger"></p>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required name="mensaje"></textarea>
           <p class="help-block text-danger"></p>
         </div>
         <div id="success"></div>

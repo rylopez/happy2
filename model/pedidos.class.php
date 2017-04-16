@@ -214,6 +214,22 @@ FROM detalle_pedido INNER JOIN producto ON detalle_pedido.id_producto=producto.i
 
 		happy_BD::Disconnect();
 	}
+	function Readbyusuario($id_usuario)
+	{
+		//instacioamos y nos conectamos a la  base de  datos
+		$conexion=happy_BD::Connect();
+		$conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+		
+		//crear  el  query  que vamos a realizar.
+		$consulta= "SELECT pedido.id_pedido,pedido.fecha_pedido, usuario.nombre,usuario.apellido,pedido.estado,pedido.total,pedido.forma_pago FROM pedido INNER JOIN usuario ON pedido.id_usuario=usuario.id_usuario WHERE pedido.id_usuario=? ";
+		$query=$conexion->prepare($consulta);
+		$query->execute(array($id_usuario));
+		
+		$resultado=$query->fetchALL(PDO::FETCH_BOTH);
+        return $resultado;
+
+        happy_BD::Disconnect();
+	}
 	function Readbypedido($id_pedido)
 	{
 		//instacioamos y nos conectamos a la  base de  datos
