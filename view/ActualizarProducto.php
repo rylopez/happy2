@@ -9,7 +9,7 @@
    });
 $('[data-toggle="tooltip"]').tooltip(); 
 
-function soloLetras(e) {
+function sl(e) {
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
     letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
@@ -26,7 +26,7 @@ function soloLetras(e) {
     if(letras.indexOf(tecla) == -1 && !tecla_especial)
         return false;
 }
-function soloNumeros(e) {
+function sn(e) {
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
     letras = " 0123456789";
@@ -65,19 +65,19 @@ function soloNumeros(e) {
   <form   action="../controller/productos.controller.php" method="POST">
         <h3 >Actualizar Producto</h3>
         
-          <input  type="text" placeholder="Referencia" name="referencia"  required data-toggle="tooltip" title="Referencia" value="<?php echo $producto[1] ?>" />
+          <input  type="text" placeholder="Referencia" name="referencia"  required data-toggle="tooltip" title="Referencia" value="<?php echo $producto[1] ?>" readonly />
               
-            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip" title="Nombre producto" value="<?php echo $producto[2] ?>" onkeypress="return soloLetras(event)"  id="miInput" />             
+            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip" title="Nombre producto" value="<?php echo $producto[2] ?>" onkeypress="return sl(event)"   />             
             
-            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip" title="Valor de Compra" value="<?php echo $producto[3] ?>" onkeypress="return soloNumeros(event)"  id="miInput" />
+            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip" title="Valor de Compra" value="<?php echo $producto[3] ?>" onkeypress="return sn(event)"  />
 
-            <input   type="number" name="valor_venta" placeholder="Valor Venta" required data-toggle="tooltip" title="Valor de Venta" value="<?php echo $producto[4] ?>" onkeypress="return soloNumeros(event)"  id="miInput" />
+            <input   type="number" name="valor_venta" placeholder="Valor Venta" required data-toggle="tooltip" title="Valor de Venta" value="<?php echo $producto[4] ?>" onkeypress="return sn(event)"  />
 
-            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip" title=" Porcentaje Descuento" value="<?php echo $producto[5] ?>" onkeypress="return soloNumeros(event)"  id="miInput"/>
+            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip" title=" Porcentaje Descuento" value="<?php echo $producto[5] ?>" onkeypress="return sn(event)" />
 
-            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip" title="Porcentaje Iva" value="<?php echo $producto[6] ?>" onkeypress="return soloNumeros(event)" onblur="limpia()" id="miInput" />
+            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip" title="Porcentaje Iva" value="<?php echo $producto[6] ?>" onkeypress="return sn(event)"  id="miInput" />
 
-            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip" title="Cantidades Existentes" value="<?php echo $producto[12] ?>" onkeypress=" return soloNumeros(event)"  id="miInput" />
+            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip" title="Cantidades Existentes" value="<?php echo $producto[12] ?>" onkeypress=" return sn(event)"   />
 
             
             <select    name="sexo"  required data-toggle="tooltip" title="Publico Objectivo" >

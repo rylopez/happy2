@@ -92,7 +92,7 @@ require_once("../model/imagenes.class.php");
  $id=1;
   $img=Gestion_imagenes::ReadbyId($id);
 ?>
-<div class="bg">
+<div id="index1" class="bg">
    <div style="margin-left: 15%">
         <i style="font-family:'lacite';font-size: 4em; color: white;">"<?php echo $img["frase_index_1"]; ?>"</i>
         <br>
@@ -171,7 +171,7 @@ require_once("../model/imagenes.class.php");
   </div>
 </div>
 
-<div class="bg2">
+<div id="index2" class="bg2">
    <div style="margin-left: 15%">
         <i style="font-family:'lacite';font-size: 4em; color: white;">"<?php echo $img["frase_index_2"]; ?>"</i>
         <br>

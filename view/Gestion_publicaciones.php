@@ -53,9 +53,9 @@
 		                
 		                
 
-		              <td><a href="#" onclick="openmodal('actualizar_publicacion','<?php echo $row['id_publicacion'] ?>')"><i class="fa fa-pencil" style="color:black !important"></i></a>
-                    <a href="#" onclick="openmodal('actualizar_file_publicacion','<?php echo $row['id_publicacion'] ?>')" ><i class='fa fa-pencil-square-o' aria-hidden='true' style='color:gray !important' ></i></a>
-                      <a href='../controller/publicaciones.controller.php?ui=<?PHP echo base64_encode($row["id_producto"])?>&acc=d'><i class='fa fa-ban' style='color:red !important' aria-hidden='true'></i></a></td>
+		              <td><a href="#" data-toggle="tooltip" title="Actualizar Información Publicacion" onclick="openmodal('actualizar_publicacion','<?php echo $row['id_publicacion'] ?>')"><i class="fa fa-pencil" style="color:black !important"></i></a>
+                    <a href="#" data-toggle="tooltip" title="Actualizar Foto Publicacion" onclick="openmodal('actualizar_file_publicacion','<?php echo $row['id_publicacion'] ?>')" ><i class='fa fa-pencil-square-o' aria-hidden='true' style='color:gray !important' ></i></a>
+                      </td>
                   </tr>
                 
 		            

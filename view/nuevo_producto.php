@@ -11,17 +11,17 @@
 
           <input   type="text" placeholder="Referencia" name="referencia"  required  data-toggle="tooltip"  title="Referencia"/>
               
-            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip"  title="Nombre" />             
+            <input  type="text" placeholder="Nombre" name="nombre"  required data-toggle="tooltip"  title="Nombre" onkeypress="return sl(event)"/>             
             
-            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip"  title="Valor Compra" />
+            <input   type="number" name="valor_compra" placeholder="Valor Compra" required data-toggle="tooltip"  title="Valor Compra" onkeypress="return sn(event)" />
 
-            <input   type="number" name="valor_venta" placeholder="Valor Venta" required  data-toggle="tooltip"  title="Valor Venta"/>
+            <input   type="number" name="valor_venta" placeholder="Valor Venta" required  data-toggle="tooltip"  title="Valor Venta" onkeypress="return sn(event)"/>
 
-            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip"  title="Porcentaje Descuento" />
+            <input   type="number" name="descuento" placeholder="Descuento" required data-toggle="tooltip"  title="Porcentaje Descuento" onkeypress="return sn(event)" />
 
-            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip"  title="Porcentaje Iva" />
+            <input   type="number" name="iva" placeholder="Iva" required data-toggle="tooltip"  title="Porcentaje Iva" onkeypress="return sn(event)" />
 
-            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip"  title="Cantidad De existencias"/>
+            <input   type="number" name="cantidad" placeholder="Cantidad Existentes" required data-toggle="tooltip"  title="Cantidad De existencias" onkeypress="return sn(event)"/>
             <br>
             <label>Adjunte imagen 1</label>
             <input   type="file" name="foto1"  required data-toggle="tooltip"  title="Imagen Producto" />
@@ -75,8 +75,45 @@
    });
   
      $('[data-toggle="tooltip"]').tooltip(); 
+     function sl(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+function sn(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+
+
     
        });
+
 
       
        

@@ -27,7 +27,7 @@ $('[data-toggle="tooltip"]').tooltip();
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="index1">Cambiar</button>
-       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode(""); ?>">Ver</a>
+       <a  class=" btn cancelar" target="_blank" href="index.php#index1">Ver</a>
             
   </form>
   <form  id action="../controller/imagenes.controller.php" method="POST" enctype="multipart/form-data">
@@ -45,7 +45,7 @@ $('[data-toggle="tooltip"]').tooltip();
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="index2">Cambiar</button>
-       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode(""); ?>">Ver</a>
+       <a  class=" btn cancelar" target="_blank" href="index.php#index2">Ver</a>
             
   </form>
   <form  id action="../controller/imagenes.controller.php" method="POST" enctype="multipart/form-data">
@@ -63,7 +63,7 @@ $('[data-toggle="tooltip"]').tooltip();
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="producto">Cambiar</button>
-       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode(""); ?>">Ver</a>
+       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode("viewproducto"); ?>">Ver</a>
             
   </form>
   <form  id action="../controller/imagenes.controller.php" method="POST" enctype="multipart/form-data">
@@ -81,7 +81,7 @@ $('[data-toggle="tooltip"]').tooltip();
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="compras">Cambiar</button>
-       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode(""); ?>">Ver</a>
+       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode("detallecomprar"); ?>">Ver</a>
             
   </form>
   <form  id action="../controller/imagenes.controller.php" method="POST" enctype="multipart/form-data">
@@ -99,7 +99,7 @@ $('[data-toggle="tooltip"]').tooltip();
 
       <br>
       <button class="guardar"   type="botton" name="acc" value="publicacion">Cambiar</button>
-       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode(""); ?>">Ver</a>
+       <a  class=" btn cancelar" target="_blank" href="index.php?p=<?php echo base64_encode("viewPublicaciones"); ?>">Ver</a>
             
   </form>
 

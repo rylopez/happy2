@@ -69,9 +69,9 @@
 		                <td>".$row["correo"]."</td>
 		                <td>$perfil</td>
 		                <td>$estado</td>"; ?>
-		               <td><a href="#" onclick="openmodal('actualizar_usuario','<?php echo $row['id_usuario'] ?>')"><i class="fa fa-pencil" style="color:black !important"></i></a>
+		               <td><a href="#"  data-toggle="tooltip" title="Actualizar Usuario" onclick="openmodal('actualizar_usuario','<?php echo $row['id_usuario'] ?>')"><i class="fa fa-pencil" style="color:black !important"></i></a>
                   
-                      <a href='../controller/usuarios.controller.php?ui=<?PHP echo base64_encode($row["id_usuario"])?>&acc=d'><i class='fa fa-ban' style='color:red !important' aria-hidden='true'></i></a></td>
+                     </td>
                   </tr>
                 
                 

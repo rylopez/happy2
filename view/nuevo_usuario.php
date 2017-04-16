@@ -1,6 +1,56 @@
 <script type="text/javascript">
   
 $('[data-toggle="tooltip"]').tooltip(); 
+function sl(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+function sn(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
+function funcion(){
+  var regexp = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
+
+if((regexp.test(document.form.correo.value) == 0) || (document.form.correo.value.length = 0)){
+alert("Introduzca una dirección de email válida");
+document.form.correo.focus();
+return false;
+} else {
+return true;
+}
+
+
+
+} 
+
+
 </script>
 <?php
 
@@ -20,7 +70,7 @@ $('[data-toggle="tooltip"]').tooltip();
 <div class="form-style-6">
 
  
-  <form   action="../controller/usuarios.controller.php"  method="POST">
+  <form name="form"  action="../controller/usuarios.controller.php"  method="POST" onsubmit="return funcion();">
         <h3 ><?php echo $titulo ?></h3>
         
 
@@ -34,23 +84,23 @@ $('[data-toggle="tooltip"]').tooltip();
             <option value="Pasaporte">Pasaporte</option>
           </select>
 
-          <input type="number" placeholder="Numero de Documento" name="numero_documento" class="validate" required data-toggle="tooltip" title="Numero de Documento" />
+          <input type="number" placeholder="Numero de Documento" name="numero_documento" class="validate" required data-toggle="tooltip" title="Numero de Documento"  onkeypress="return sn(event)"/>
               
-            <input type="text" placeholder="Nombres" name="nombre"  required data-toggle="tooltip"  title="Nombres" />
+            <input type="text" placeholder="Nombres" name="nombre"  required data-toggle="tooltip"  title="Nombres" onkeypress="return sl(event)"/>
              
             
-            <input type="text" name="apellido" placeholder="Apellido" required data-toggle="tooltip"  title="Titulo" />
+            <input type="text" name="apellido" placeholder="Apellido" required data-toggle="tooltip"  title="Titulo" onkeypress="return sl(event)" />
               
             
-            <input type="number" name="celular" placeholder="Número Celular"  required size="11" data-toggle="tooltip"  title="Numero Celular"  />
+            <input type="number" name="celular" placeholder="Número Celular"  required size="11" data-toggle="tooltip"  title="Numero Celular" onkeypress="return sn(event)" />
           
-            <input type="number" name="telefono"  placeholder="Número telefofico" required size="10" data-toggle="tooltip"  title="Numero Telefonico"  />
+            <input type="number" name="telefono"  placeholder="Número telefofico" required size="10" data-toggle="tooltip"  title="Numero Telefonico" onkeypress="return sn(event)" />
           
             
             <input type="text" name="direccion"  placeholder="Dirección" required data-toggle="tooltip"  title="Direccion" />
          
            
-            <input type="text" name="ciudad" placeholder="Ciudad de residencia" required data-toggle="tooltip"  title="Ciudad"  / >
+            <input type="text" name="ciudad" placeholder="Ciudad de residencia" required data-toggle="tooltip"  title="Ciudad" onkeypress="return sl(event)" / >
             
           
             
@@ -63,7 +113,7 @@ $('[data-toggle="tooltip"]').tooltip();
           
       
          
-            <input type="number" name="edad" placeholder="Edad" required data-toggle="tooltip"  title="Edad" />
+            <input type="number" name="edad" placeholder="Edad" required data-toggle="tooltip"  title="Edad" onkeypress="return sn(event)" />
            
          
            <select name="sexo" required data-toggle="tooltip"  title="Sexo" >

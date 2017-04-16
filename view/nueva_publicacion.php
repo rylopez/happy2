@@ -1,6 +1,23 @@
 <script type="text/javascript">
   
 $('[data-toggle="tooltip"]').tooltip(); 
+function sl(e) {
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+    especiales = [8, 37, 39, 46];
+
+    tecla_especial = false
+    for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+        }
+    }
+
+    if(letras.indexOf(tecla) == -1 && !tecla_especial)
+        return false;
+}
 </script>
 <?php
   
@@ -22,9 +39,9 @@ $('[data-toggle="tooltip"]').tooltip();
         
         
 
-          <input   type="text" placeholder="Titulo " name="Titulo"  required data-toggle="tooltip"  title="Titulo" />
+          <input   type="text" placeholder="Titulo " name="Titulo"  required data-toggle="tooltip"  title="Titulo" onkeypress="return sl(event)" />
            <textarea name="texto" placeholder="Escribe aqui el Articulo" COLS=100 ROWS=30  data-toggle="tooltip" title="Texto"></textarea>
-          <input type="text" name="autor"   required data-toggle="tooltip"  title="Autor" required>
+          <input type="text" name="autor"   required data-toggle="tooltip"  title="Autor" required onkeypress="return sl(event)">
            <select name="tipo_publicacion"  data-toggle="tooltip"  title="tipo_producto"  required >
             <option value="x" disabled selected>Seleccione una opcion</option>
              <option value="relatos">Relato</option>

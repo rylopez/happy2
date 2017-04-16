@@ -66,7 +66,7 @@
 		                <td><?php echo $row["total"] ?></td>
 		                <td><?php echo $row["forma_pago"] ?></td>
 		                
-		               <td><a style="color: black !important; font-size: 2em;" href="#" onclick="openmodal('ver_pedido','<?php echo $row['id_pedido'] ?>')"><i class="fa fa-eye" aria-hidden="true"></i></a>
+		               <td><a data-toggle="tooltip" title="Ver Pedido" style="color: black !important; font-size: 2em;" href="#" onclick="openmodal('ver_pedido','<?php echo $row['id_pedido'] ?>')"><i class="fa fa-eye" aria-hidden="true"></i></a>
                   
                    </td>
                   </tr>

@@ -31,8 +31,8 @@
 
 .overlay ul li {
   list-style: none;
-  font-size: 30px;
-  padding: 40px 0;
+  font-size: 2.2em;
+  padding: 8% 0;
   border-bottom: 1px dotted #FFFFFF;
   -webkit-transition-duration: 1s; /* Safari */
   transition-duration: 1s;
